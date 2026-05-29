@@ -20,7 +20,7 @@
                 <div class="row g-3 mb-4">
                     <div class="col-md-3"><label class="form-label required">Employee ID </label><input
                             class="form-control" placeholder="EMP001"></div>
-                    <div class="col-md-6"><label class="form-label required">Full Name</label><input
+                    <div class="col-md-3"><label class="form-label required">Full Name</label><input
                             class="form-control" placeholder="Name of personnel"></div>
                     <div class="col-md-3"><label class="form-label">Rank / Designation</label>
                         <select class="form-select">
