@@ -34,39 +34,28 @@
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="col-md-3"><label class="form-label">Unit </label><select class="form-select"
+                    <div class="col-md-3"><label class="form-label">Unit </label>
+                        <select class="form-select"
                             id="unitSelect">
                             <option value="">Select Unit</option>
-                            <option>IB HQ, WB</option>
-                            <option value="LIU">LIU</option>
-                            <option>Other</option>
+                            <?php foreach($unitDetails as $unit) { ?>
+
+                                <option value="<?= $unit['id']; ?>">
+                                    <?= $unit['unit_name']; ?>
+                                </option>   
+
+                            <?php } ?> 
                         </select></div>
                     <div class="col-md-3 d-none" id="liuUnitBox"><label class="form-label required">Select
                             LIU</label><select class="form-select">
                             <option value="">Select LIU of IB</option>
-                            <option>LIU Alipurduar</option>
-                            <option>LIU Bankura</option>
-                            <option>LIU Birbhum</option>
-                            <option>LIU Cooch Behar</option>
-                            <option>LIU Dakshin Dinajpur</option>
-                            <option>LIU Darjeeling</option>
-                            <option>LIU Hooghly</option>
-                            <option>LIU Howrah</option>
-                            <option>LIU Jalpaiguri</option>
-                            <option>LIU Jhargram</option>
-                            <option>LIU Kalimpong</option>
-                            <option>LIU Kolkata</option>
-                            <option>LIU Malda</option>
-                            <option>LIU Murshidabad</option>
-                            <option>LIU Nadia</option>
-                            <option>LIU North 24 Parganas</option>
-                            <option>LIU Paschim Bardhaman</option>
-                            <option>LIU Paschim Medinipur</option>
-                            <option>LIU Purba Bardhaman</option>
-                            <option>LIU Purba Medinipur</option>
-                            <option>LIU Purulia</option>
-                            <option>LIU South 24 Parganas</option>
-                            <option>LIU Uttar Dinajpur</option>
+                            <?php foreach($liuDetails as $item) { ?>
+
+                                <option value="<?= $item['id']; ?>">
+                                    <?= $item['liu_name']; ?>
+                                </option>   
+
+                            <?php } ?>
                         </select></div>
                     <div class="col-md-3"><label class="form-label">Gender</label><select class="form-select">
                             <option>Male</option>
@@ -408,14 +397,13 @@
                                 <td><input class="form-control" placeholder="Family member name"></td>
                                 <td><select class="form-select relationship-dropdown">
                                         <option value="" selected disabled>-- Select Relationship --</option>
-                                        <option>Father</option>
-                                        <option>Mother</option>
-                                        <option>Father in law</option>
-                                        <option>Mother in Law</option>
-                                        <option>Spouse</option>
-                                        <option>Son</option>
-                                        <option>Brother</option>
-                                        <option>Sister</option>
+                                        <?php foreach($relationshipDetails as $item) { ?>
+
+                                            <option value="<?= $item['id']; ?>">
+                                                <?= $item['relationship_name']; ?>
+                                            </option>   
+
+                                        <?php } ?>
                                     </select></td>
                                 <td><input type="date" id="dob" class="form-control"></td>
                                 <td>
@@ -489,4 +477,23 @@ document.getElementById('dob').addEventListener('change', function () {
 
     document.getElementById('age').value = age;
 });
+
+// document.getElementById('unitSelect').addEventListener('change', function () {
+//     debugger;
+//     let selectedText = this.options[this.selectedIndex].text;
+
+//     let liuBox = document.getElementById('liuUnitBox');
+
+//     if (selectedText === 'LIU') {
+
+//         liuBox.classList.remove('d-none');
+
+//     } else {
+
+//         liuBox.classList.add('d-none');
+
+//     }
+
+// });
+
 </script>

@@ -1,11 +1,11 @@
 <?php 
 namespace App\Models;
 use CodeIgniter\Model;
-class UnitModel extends Model{
-	protected $table = 'master_unit';
+class LiuModel extends Model{
+	protected $table = 'master_liu';
 	protected $allowedFields = [
 					'id',
-					'unit_name',
+					'liu_name',
 					'status',
 				];
 }

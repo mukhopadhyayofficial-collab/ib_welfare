@@ -3,7 +3,9 @@
 namespace App\Controllers;
 use App\Models\DesignationModel;
 use App\Models\UserModel;
-use App\Models\CustomModel;
+use App\Models\UnitModel;
+use App\Models\LiuModel;
+use App\Models\RelationshipModel;
 
 class Employee extends BaseController {
     private function uid(): int
@@ -59,17 +61,26 @@ class Employee extends BaseController {
     }
     public function addEmployee(){ 
         $rankModel = new DesignationModel();
+        $unitModel = new UnitModel();
+        $liuModel = new LiuModel();
+        $relationshipModel = new RelationshipModel();
 
         if ($r = $this->requireLogin()) return $r;
         $uid        = $this->uid();
     	$userDetails  = $this->userDetails($uid);        
         $rankModel = $rankModel->where('status', 'Active')->findAll();
+        $unitModel = $unitModel->where('status', 'Active')->findAll();
+        $liuModel = $liuModel->where('status', 'Active')->findAll();
+        $relationshipModel = $relationshipModel->where('status', 'Active')->findAll();
 
         $data = [
             'title'    => 'Add Employee',
             'active_menu' => 'add-employee',
             'userDetails'  => $userDetails,
             'rankDetails'  => $rankModel,
+            'unitDetails'  => $unitModel,
+            'liuDetails'  => $liuModel,
+            'relationshipDetails'  => $relationshipModel,
         ];
         return view('_header', $data) . view('Employee/employeeAddition', $data);
     }
