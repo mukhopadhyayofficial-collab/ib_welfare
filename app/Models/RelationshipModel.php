@@ -1,11 +1,11 @@
 <?php 
 namespace App\Models;
 use CodeIgniter\Model;
-class UnitModel extends Model{
-	protected $table = 'master_unit';
+class RelationshipModel extends Model{
+	protected $table = 'master_relationship';
 	protected $allowedFields = [
 					'id',
-					'unit_name',
+					'relationship_name',
 					'status',
 				];
 }

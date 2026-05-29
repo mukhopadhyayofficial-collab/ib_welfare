@@ -82,7 +82,7 @@ function toggleLiuBox(){
     const unitSelect = document.getElementById('unitSelect');
     const liuBox = document.getElementById('liuUnitBox');
     if(!unitSelect || !liuBox) return;
-    liuBox.classList.toggle('d-none', unitSelect.value !== 'LIU');
+    liuBox.classList.toggle('d-none', unitSelect.value !== '2');
 }
 
 function copyPresentToPermanent(){
