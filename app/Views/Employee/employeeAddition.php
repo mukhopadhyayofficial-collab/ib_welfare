@@ -25,22 +25,13 @@
                     <div class="col-md-3"><label class="form-label">Rank / Designation</label>
                         <select class="form-select">
                             <option value="">Select Rank</option>
-                            <option>Civic</option>
-                            <option>Constable</option>
-                            <option>Lady Constable</option>
-                            <option>ASI</option>
-                            <option>LASI</option>
-                            <option>SI</option>
-                            <option>LSI</option>
-                            <option>Inspector</option>
-                            <option>DySP</option>
-                            <option>Additional SP</option>
-                            <option>SP/SS</option>
-                            <option>DIG</option>
-                            <option>IGP</option>
-                            <option>ADG & IGP</option>
-                            <option>DGP & IGP</option>
-                            <option>Other</option>
+                             <?php foreach($rankDetails as $rank) { ?>
+
+                                <option value="<?= $rank['id']; ?>">
+                                    <?= $rank['rank_name']; ?>
+                                </option>
+
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="col-md-3"><label class="form-label">Unit </label><select class="form-select"

@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\DesignationModel;
 use App\Models\UserModel;
 use App\Models\CustomModel;
 
@@ -57,13 +58,18 @@ class Employee extends BaseController {
         return view('_header', $data) . view('Employee/employeeManagement', $data);
     }
     public function addEmployee(){ 
+        $rankModel = new DesignationModel();
+
         if ($r = $this->requireLogin()) return $r;
         $uid        = $this->uid();
-    	$userDetails  = $this->userDetails($uid);
+    	$userDetails  = $this->userDetails($uid);        
+        $rankModel = $rankModel->where('status', 'Active')->findAll();
+
         $data = [
             'title'    => 'Add Employee',
             'active_menu' => 'add-employee',
             'userDetails'  => $userDetails,
+            'rankDetails'  => $rankModel,
         ];
         return view('_header', $data) . view('Employee/employeeAddition', $data);
     }
