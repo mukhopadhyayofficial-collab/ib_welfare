@@ -102,14 +102,53 @@
 
                 <div class="section-title"><i class="bi bi-telephone"></i> Contact & Address Details</div>
                 <div class="row g-3 mb-4">
-                    <div class="col-md-3"><label class="form-label required">Mobile Number</label><input
-                            class="form-control" placeholder="10 digit mobile"></div>
-                    <div class="col-md-3"><label class="form-label">Alternate Mobile</label><input class="form-control">
+                    <!--<div class="col-md-3"><label class="form-label required">Mobile Number</label><input
+                            class="form-control" type="number" max="10" placeholder="10 digit mobile"></div>-->
+
+                    <div class="col-md-3">
+                    <label class="form-label required">Mobile Number</label>
+                    <input
+                        type="tel"
+                        name="mobile"
+                        class="form-control"
+                        placeholder="Enter 10-digit mobile number"
+                        maxlength="10"
+                        pattern="[6-9][0-9]{9}"
+                        required
+                        oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
                     </div>
-                    <div class="col-md-3"><label class="form-label">Email</label><input type="email"
-                            class="form-control"></div>
-                    <div class="col-md-3"><label class="form-label">Emergency Contact No.</label><input
-                            class="form-control"></div>
+                    <div class="col-md-3"><label class="form-label">Alternate Mobile</label>
+                    <input
+                        type="tel"
+                        name="mobile"
+                        class="form-control"
+                        placeholder="Enter 10-digit mobile number"
+                        maxlength="10"
+                        pattern="[6-9][0-9]{9}"
+                        required
+                        oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+                    </div>
+                    <div class="col-md-3"><label class="form-label">Email</label>
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Enter Email ID"
+                        maxlength="100"
+                        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                        required>
+                    </div>
+                    <div class="col-md-3"><label class="form-label">Emergency Contact No.</label>
+                    <input
+                        type="tel"
+                        name="mobile"
+                        class="form-control"
+                        placeholder="Enter 10-digit mobile number"
+                        maxlength="10"
+                        pattern="[6-9][0-9]{9}"
+                        required
+                        oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+                    </div>
                     <div class="col-12">
                         <div class="address-band"><strong><i class="bi bi-geo-alt"></i> Present Address</strong>
                             <div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"
@@ -117,9 +156,26 @@
                                     same as present</label></div>
                         </div>
                     </div>
-                    <div class="col-md-3"><label class="form-label required">City / Village</label><input
+                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
                             id="presentCity" class="form-control address-present" placeholder="City / Village"></div>
-                    <div class="col-md-3"><label class="form-label required">Post Office</label><select id="presentPO"
+                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><select id="presentPO"
+                            class="form-select address-present">
+                            <option value="">Select Post Office</option>
+                            <option>Kolkata GPO</option>
+                            <option>Bhowanipore</option>
+                            <option>Alipore</option>
+                            <option>Barasat</option>
+                            <option>Krishnanagar</option>
+                            <option>Berhampore</option>
+                            <option>Asansol</option>
+                            <option>Durgapur</option>
+                            <option>Siliguri</option>
+                            <option>Malda</option>
+                            <option>Midnapore</option>
+                            <option>Purulia</option>
+                        </select></div>
+
+                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><select id="presentPO"
                             class="form-select address-present">
                             <option value="">Select Post Office</option>
                             <option>Kolkata GPO</option>
