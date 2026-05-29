@@ -1,0 +1,6 @@
+CRITICAL - 2025-12-29 13:30:01 --> Undefined constant "App\Controllers\cmc_document_date"
+in APPPATH\Controllers\PrintLetter.php on line 312.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PrintLetter->printRecord()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PrintLetter))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

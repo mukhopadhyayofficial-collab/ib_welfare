@@ -1,0 +1,21 @@
+CRITICAL - 2025-05-03 08:46:02 --> Undefined array key "cmc_document_date"
+in APPPATH\Controllers\Record.php on line 389.
+ 1 APPPATH\Controllers\Record.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cmc_document_date"', 'C:\\xampp\\htdocs\\2025\\cmc\\app\\Controllers\\Record.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Record->recordSave()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Record))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-05-03 10:32:22 --> Undefined array key "cmc_document_date"
+in APPPATH\Controllers\Record.php on line 389.
+ 1 APPPATH\Controllers\Record.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cmc_document_date"', 'C:\\xampp\\htdocs\\2025\\cmc\\app\\Controllers\\Record.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Record->recordSave()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Record))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-05-03 11:22:49 --> Undefined array key "cmc_document_date"
+in APPPATH\Controllers\Record.php on line 389.
+ 1 APPPATH\Controllers\Record.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cmc_document_date"', 'C:\\xampp\\htdocs\\2025\\cmc\\app\\Controllers\\Record.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Record->recordSave()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Record))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

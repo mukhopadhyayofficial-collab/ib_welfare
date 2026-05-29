@@ -1,0 +1,215 @@
+CRITICAL - 2024-02-02 05:59:15 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 598.
+ 1 APPPATH\Controllers\ManageReport.php(598): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 598)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 05:59:29 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 598.
+ 1 APPPATH\Controllers\ManageReport.php(598): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 598)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 05:59:37 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 598.
+ 1 APPPATH\Controllers\ManageReport.php(598): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 598)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:00:02 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 598.
+ 1 APPPATH\Controllers\ManageReport.php(598): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 598)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:04:45 --> Call to undefined method App\Models\MemoModel::fetchAll
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\ManageReport.php(599): CodeIgniter\Model->__call('fetchAll', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:06:34 --> Call to undefined method App\Models\MemoModel::fetchAll
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\ManageReport.php(600): CodeIgniter\Model->__call('fetchAll', [])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-02 06:06:48 --> mysqli_sql_exception: Unknown column 'cmc_monthlyMemoMonth' in 'where clause' in C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\2024\cmc\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\2024\cmc\system\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\2024\cmc\system\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\2024\cmc\app\Controllers\ManageReport.php(600): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+#8 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+#9 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\2024\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2024-02-02 06:06:48 --> Unknown column 'cmc_monthlyMemoMonth' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `cmc_momo_no`
+WHERE `cmc_monthlyMemoMonth` = :cmc_monthlyMemoMonth:
+AND `cmc_monthlyMemoYear` = :cmc_monthlyMemoYear:', [...], false)
+ 2 SYSTEMPATH\Model.php(237): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(624): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\ManageReport.php(600): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:20:59 --> Call to undefined function App\Controllers\getVar()
+in APPPATH\Controllers\ManageReport.php on line 458.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:21:06 --> Call to undefined function App\Controllers\getVar()
+in APPPATH\Controllers\ManageReport.php on line 458.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:22:32 --> Call to undefined function App\Controllers\getVar()
+in APPPATH\Controllers\ManageReport.php on line 458.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 06:23:23 --> Call to undefined function App\Controllers\getVar()
+in APPPATH\Controllers\ManageReport.php on line 459.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printLetter()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 08:31:47 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 750.
+ 1 APPPATH\Controllers\ManageReport.php(750): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 750)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementLetter()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-02 08:35:05 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`cmc_leaStatus` = '1' ORDER BY `cmc_leaName` ASC' at line 1 in C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `cmc_lea...', 0)
+#1 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cmc_lea...')
+#2 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cmc_lea...')
+#3 C:\xampp\htdocs\2024\cmc\app\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT `cmc_lea...')
+#4 C:\xampp\htdocs\2024\cmc\app\Controllers\ManageReport.php(750): App\Models\CustomModel->executeQuery('SELECT `cmc_lea...')
+#5 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementLetter()
+#6 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+#7 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\2024\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-02-02 08:35:05 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`cmc_leaStatus` = '1' ORDER BY `cmc_leaName` ASC' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT `cmc_leaId`,`cmc_leaName` FROM `cmc_lea` WHERE cmc_leaId = \'43\'`cmc_leaStatus` = \'1\' ORDER BY `cmc_leaName` ASC ')
+ 2 APPPATH\Controllers\ManageReport.php(750): App\Models\CustomModel->executeQuery('SELECT `cmc_leaId`,`cmc_leaName` FROM `cmc_lea` WHERE cmc_leaId = \'43\'`cmc_leaStatus` = \'1\' ORDER BY `cmc_leaName` ASC ')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementLetter()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-02-02 08:35:18 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`cmc_leaStatus` = '1' ORDER BY `cmc_leaName` ASC' at line 1 in C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `cmc_lea...', 0)
+#1 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cmc_lea...')
+#2 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cmc_lea...')
+#3 C:\xampp\htdocs\2024\cmc\app\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT `cmc_lea...')
+#4 C:\xampp\htdocs\2024\cmc\app\Controllers\ManageReport.php(750): App\Models\CustomModel->executeQuery('SELECT `cmc_lea...')
+#5 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementLetter()
+#6 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+#7 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\2024\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-02-02 08:35:18 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '`cmc_leaStatus` = '1' ORDER BY `cmc_leaName` ASC' at line 1
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT `cmc_leaId`,`cmc_leaName` FROM `cmc_lea` WHERE cmc_leaId = \'43\'`cmc_leaStatus` = \'1\' ORDER BY `cmc_leaName` ASC ')
+ 2 APPPATH\Controllers\ManageReport.php(750): App\Models\CustomModel->executeQuery('SELECT `cmc_leaId`,`cmc_leaName` FROM `cmc_lea` WHERE cmc_leaId = \'43\'`cmc_leaStatus` = \'1\' ORDER BY `cmc_leaName` ASC ')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementLetter()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 08:44:18 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 926.
+ 1 APPPATH\Controllers\ManageReport.php(926): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 926)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 08:45:05 --> Undefined property: App\Controllers\ManageReport::$Commonmodel
+in APPPATH\Controllers\ManageReport.php on line 928.
+ 1 APPPATH\Controllers\ManageReport.php(928): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\ManageReport::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\ManageReport.php', 928)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\ManageReport->printStatementRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ManageReport))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:50:38 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\UpdateRecord.php on line 1234.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UpdateRecord')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UpdateRecord')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UpdateRecord', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:51:04 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\UpdateRecord.php on line 1234.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UpdateRecord')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UpdateRecord')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UpdateRecord', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:51:40 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\UpdateRecord.php on line 1234.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UpdateRecord')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UpdateRecord')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UpdateRecord', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:52:18 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\UpdateRecord.php on line 1234.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UpdateRecord')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UpdateRecord')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UpdateRecord', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:53:49 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\UpdateRecord.php on line 1234.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UpdateRecord')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UpdateRecord')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UpdateRecord', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:55:05 --> syntax error, unexpected token "echo"
+in APPPATH\Controllers\UpdateRecord.php on line 1234.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(291): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(269): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\UpdateRecord')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\UpdateRecord')
+ 4 SYSTEMPATH\CodeIgniter.php(900): class_exists('\\App\\Controllers\\UpdateRecord', true)
+ 5 SYSTEMPATH\CodeIgniter.php(489): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-02-02 09:58:23 --> Undefined property: App\Controllers\UpdateRecord::$Commonmodel
+in APPPATH\Controllers\UpdateRecord.php on line 1214.
+ 1 APPPATH\Controllers\UpdateRecord.php(1214): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: App\\Controllers\\UpdateRecord::$Commonmodel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 1214)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->editRecord('384986')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

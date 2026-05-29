@@ -1,0 +1,226 @@
+CRITICAL - 2024-01-31 08:11:20 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 719.
+ 1 APPPATH\Controllers\UpdateRecord.php(719): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 719)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:12:15 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 719.
+ 1 APPPATH\Controllers\UpdateRecord.php(719): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 719)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:17:29 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 721.
+ 1 APPPATH\Controllers\UpdateRecord.php(721): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 721)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:19:00 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 721.
+ 1 APPPATH\Controllers\UpdateRecord.php(721): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 721)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:22:08 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 723.
+ 1 APPPATH\Controllers\UpdateRecord.php(723): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 723)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:22:35 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 723.
+ 1 APPPATH\Controllers\UpdateRecord.php(723): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 723)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:23:27 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 724.
+ 1 APPPATH\Controllers\UpdateRecord.php(724): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 724)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 08:24:17 --> Undefined variable $375346
+in APPPATH\Controllers\UpdateRecord.php on line 724.
+ 1 APPPATH\Controllers\UpdateRecord.php(724): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $375346', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 724)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->getShareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 09:50:42 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 790.
+ 1 APPPATH\Controllers\UpdateRecord.php(790): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 790)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 09:54:44 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 794.
+ 1 APPPATH\Controllers\UpdateRecord.php(794): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 794)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 09:54:56 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 794.
+ 1 APPPATH\Controllers\UpdateRecord.php(794): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 794)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 09:55:23 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 794.
+ 1 APPPATH\Controllers\UpdateRecord.php(794): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 794)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 10:10:20 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 794.
+ 1 APPPATH\Controllers\UpdateRecord.php(794): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 794)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 10:11:20 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 795.
+ 1 APPPATH\Controllers\UpdateRecord.php(795): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 795)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 10:13:00 --> Undefined variable $cmc_document_interceptionStartDate
+in APPPATH\Controllers\UpdateRecord.php on line 795.
+ 1 APPPATH\Controllers\UpdateRecord.php(795): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionStartDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 795)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-01-31 10:13:53 --> Undefined variable $cmc_document_interceptionEndDate
+in APPPATH\Controllers\UpdateRecord.php on line 796.
+ 1 APPPATH\Controllers\UpdateRecord.php(796): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $cmc_document_interceptionEndDate', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\UpdateRecord.php', 796)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\UpdateRecord->shareRecord()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\UpdateRecord))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-01-31 11:01:37 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''9547976319\'  ORDER BY `cmc_document`.`cmc_document_id` DESC' at line 10 in C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM `...', 0)
+#1 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 C:\xampp\htdocs\2024\cmc\app\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\xampp\htdocs\2024\cmc\app\Controllers\SearchRecord.php(180): App\Models\CustomModel->executeQuery('SELECT * FROM `...')
+#5 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(942): App\Controllers\SearchRecord->recordDetails()
+#6 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+#7 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\2024\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-31 11:01:37 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''9547976319\'  ORDER BY `cmc_document`.`cmc_document_id` DESC' at line 10
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `cmc_document` 
+                    LEFT JOIN `cmc_lea` 
+                    ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+                    LEFT JOIN `cmc_service_provider` 
+                    ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+                    LEFT JOIN `cmc_target_type` 
+                    ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+                    LEFT JOIN `rejection_cause` 
+                    ON  `rejection_cause`.`rejection_causeId` = `cmc_document`.`cmc_document_rejectedCauseId` 
+                    WHERE `cmc_document_status` = \'1\'   AND `cmc_document_targetNo` =\'9547976319\\\'  ORDER BY `cmc_document`.`cmc_document_id` DESC')
+ 2 APPPATH\Controllers\SearchRecord.php(180): App\Models\CustomModel->executeQuery('SELECT * FROM `cmc_document` 
+                    LEFT JOIN `cmc_lea` 
+                    ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+                    LEFT JOIN `cmc_service_provider` 
+                    ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+                    LEFT JOIN `cmc_target_type` 
+                    ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+                    LEFT JOIN `rejection_cause` 
+                    ON  `rejection_cause`.`rejection_causeId` = `cmc_document`.`cmc_document_rejectedCauseId` 
+                    WHERE `cmc_document_status` = \'1\'   AND `cmc_document_targetNo` =\'9547976319\\\'  ORDER BY `cmc_document`.`cmc_document_id` DESC')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SearchRecord->recordDetails()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-01-31 11:01:55 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''9547976319\'  ORDER BY `cmc_document`.`cmc_document_id` DESC' at line 10 in C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM `...', 0)
+#1 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 C:\xampp\htdocs\2024\cmc\app\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\xampp\htdocs\2024\cmc\app\Controllers\SearchRecord.php(180): App\Models\CustomModel->executeQuery('SELECT * FROM `...')
+#5 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(942): App\Controllers\SearchRecord->recordDetails()
+#6 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+#7 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\2024\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-31 11:01:55 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''9547976319\'  ORDER BY `cmc_document`.`cmc_document_id` DESC' at line 10
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `cmc_document` 
+                    LEFT JOIN `cmc_lea` 
+                    ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+                    LEFT JOIN `cmc_service_provider` 
+                    ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+                    LEFT JOIN `cmc_target_type` 
+                    ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+                    LEFT JOIN `rejection_cause` 
+                    ON  `rejection_cause`.`rejection_causeId` = `cmc_document`.`cmc_document_rejectedCauseId` 
+                    WHERE `cmc_document_status` = \'1\'   AND `cmc_document_targetNo` =\'9547976319\\\'  ORDER BY `cmc_document`.`cmc_document_id` DESC')
+ 2 APPPATH\Controllers\SearchRecord.php(180): App\Models\CustomModel->executeQuery('SELECT * FROM `cmc_document` 
+                    LEFT JOIN `cmc_lea` 
+                    ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+                    LEFT JOIN `cmc_service_provider` 
+                    ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+                    LEFT JOIN `cmc_target_type` 
+                    ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+                    LEFT JOIN `rejection_cause` 
+                    ON  `rejection_cause`.`rejection_causeId` = `cmc_document`.`cmc_document_rejectedCauseId` 
+                    WHERE `cmc_document_status` = \'1\'   AND `cmc_document_targetNo` =\'9547976319\\\'  ORDER BY `cmc_document`.`cmc_document_id` DESC')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SearchRecord->recordDetails()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2024-01-31 11:02:34 --> mysqli_sql_exception: You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''95479763192232323/\'  ORDER BY `cmc_document`.`cmc_document_id` DESC' at line 10 in C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2024\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM `...', 0)
+#1 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 C:\xampp\htdocs\2024\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 C:\xampp\htdocs\2024\cmc\app\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\xampp\htdocs\2024\cmc\app\Controllers\SearchRecord.php(180): App\Models\CustomModel->executeQuery('SELECT * FROM `...')
+#5 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(942): App\Controllers\SearchRecord->recordDetails()
+#6 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+#7 C:\xampp\htdocs\2024\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\2024\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2024-01-31 11:02:34 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''95479763192232323/\'  ORDER BY `cmc_document`.`cmc_document_id` DESC' at line 10
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `cmc_document` 
+                    LEFT JOIN `cmc_lea` 
+                    ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+                    LEFT JOIN `cmc_service_provider` 
+                    ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+                    LEFT JOIN `cmc_target_type` 
+                    ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+                    LEFT JOIN `rejection_cause` 
+                    ON  `rejection_cause`.`rejection_causeId` = `cmc_document`.`cmc_document_rejectedCauseId` 
+                    WHERE `cmc_document_status` = \'1\'   AND `cmc_document_targetNo` =\'95479763192232323/\\\'  ORDER BY `cmc_document`.`cmc_document_id` DESC')
+ 2 APPPATH\Controllers\SearchRecord.php(180): App\Models\CustomModel->executeQuery('SELECT * FROM `cmc_document` 
+                    LEFT JOIN `cmc_lea` 
+                    ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+                    LEFT JOIN `cmc_service_provider` 
+                    ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+                    LEFT JOIN `cmc_target_type` 
+                    ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+                    LEFT JOIN `rejection_cause` 
+                    ON  `rejection_cause`.`rejection_causeId` = `cmc_document`.`cmc_document_rejectedCauseId` 
+                    WHERE `cmc_document_status` = \'1\'   AND `cmc_document_targetNo` =\'95479763192232323/\\\'  ORDER BY `cmc_document`.`cmc_document_id` DESC')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SearchRecord->recordDetails()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

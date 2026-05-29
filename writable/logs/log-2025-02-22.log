@@ -1,0 +1,50 @@
+CRITICAL - 2025-02-22 08:49:52 --> Undefined array key "cmc_document_date"
+in APPPATH\Controllers\Record.php on line 389.
+ 1 APPPATH\Controllers\Record.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cmc_document_date"', 'C:\\xampp\\htdocs\\2025\\cmc\\app\\Controllers\\Record.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Record->recordSave()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Record))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2025-02-22 08:49:57 --> Undefined array key "cmc_document_date"
+in APPPATH\Controllers\Record.php on line 389.
+ 1 APPPATH\Controllers\Record.php(389): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "cmc_document_date"', 'C:\\xampp\\htdocs\\2025\\cmc\\app\\Controllers\\Record.php', 389)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Record->recordSave()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Record))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ERROR - 2025-02-22 13:28:54 --> mysqli_sql_exception: Unknown column 'cmc_document_case_type' in 'where clause' in C:\xampp\htdocs\2025\cmc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\2025\cmc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT * FROM `...', 0)
+#1 C:\xampp\htdocs\2025\cmc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM `...')
+#2 C:\xampp\htdocs\2025\cmc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM `...')
+#3 C:\xampp\htdocs\2025\cmc\app\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `...')
+#4 C:\xampp\htdocs\2025\cmc\app\Controllers\SearchRecord.php(696): App\Models\CustomModel->executeQuery('SELECT * FROM `...')
+#5 C:\xampp\htdocs\2025\cmc\system\CodeIgniter.php(942): App\Controllers\SearchRecord->printCustomizeReport()
+#6 C:\xampp\htdocs\2025\cmc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+#7 C:\xampp\htdocs\2025\cmc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\2025\cmc\index.php(79): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2025-02-22 13:28:54 --> Unknown column 'cmc_document_case_type' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 APPPATH\Models\CustomModel.php(15): CodeIgniter\Database\BaseConnection->query('SELECT * FROM `cmc_document` 
+			        LEFT JOIN `cmc_lea` 
+			        ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+			        LEFT JOIN `cmc_service_provider` 
+			        ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+			        LEFT JOIN `cmc_target_type` 
+			        ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+			        WHERE `cmc_document_status` = \'1\' 
+			        AND `cmc_document_type` != \'R\'  AND `cmc_document_date` BETWEEN \'2025-02-22\' AND  \'2025-02-22\'   AND `cmc_document_interceptionType` =\'EMERGENT\'   AND `cmc_document_case_type` =\'C\'   ORDER BY `cmc_document_hsMemoNo`,`cmc_document_id` DESC')
+ 2 APPPATH\Controllers\SearchRecord.php(696): App\Models\CustomModel->executeQuery('SELECT * FROM `cmc_document` 
+			        LEFT JOIN `cmc_lea` 
+			        ON `cmc_document`.`cmc_document_proposingLea` = `cmc_lea`.`cmc_leaId` 
+			        LEFT JOIN `cmc_service_provider` 
+			        ON  `cmc_service_provider`.`cmc_serviceProviderId` = `cmc_document`.`cmc_document_serviceProvider` 
+			        LEFT JOIN `cmc_target_type` 
+			        ON  `cmc_target_type`.`cmc_targetTypeId` = `cmc_document`.`cmc_document_caseType` 
+			        WHERE `cmc_document_status` = \'1\' 
+			        AND `cmc_document_type` != \'R\'  AND `cmc_document_date` BETWEEN \'2025-02-22\' AND  \'2025-02-22\'   AND `cmc_document_interceptionType` =\'EMERGENT\'   AND `cmc_document_case_type` =\'C\'   ORDER BY `cmc_document_hsMemoNo`,`cmc_document_id` DESC')
+ 3 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\SearchRecord->printCustomizeReport()
+ 4 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\SearchRecord))
+ 5 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

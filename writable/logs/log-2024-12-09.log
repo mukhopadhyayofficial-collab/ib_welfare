@@ -1,0 +1,63 @@
+CRITICAL - 2024-12-09 07:35:28 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:36:42 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:36:49 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:36:50 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:37:35 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:38:31 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:39:49 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:42:27 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2024-12-09 07:45:07 --> Undefined variable $leaModel
+in APPPATH\Controllers\PoliceStation.php on line 57.
+ 1 APPPATH\Controllers\PoliceStation.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $leaModel', 'C:\\xampp\\htdocs\\2024\\cmc\\app\\Controllers\\PoliceStation.php', 57)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\PoliceStation->addPs()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\PoliceStation))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()

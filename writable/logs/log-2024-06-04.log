@@ -1,0 +1,6 @@
+CRITICAL - 2024-06-04 09:22:55 --> Class "App\Models\ImportantModel" not found
+in APPPATH\Controllers\ImportantNumber.php on line 14.
+ 1 SYSTEMPATH\CodeIgniter.php(914): App\Controllers\ImportantNumber->__construct()
+ 2 SYSTEMPATH\CodeIgniter.php(493): CodeIgniter\CodeIgniter->createController()
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
