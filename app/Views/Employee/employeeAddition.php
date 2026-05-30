@@ -136,65 +136,39 @@
                         required
                         oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
                     </div>
-                    <div class="col-12">
-                        <div class="address-band"><strong><i class="bi bi-geo-alt"></i> Present Address</strong>
-                            <div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"
-                                    id="sameAddress"><label class="form-check-label" for="sameAddress">Permanent address
-                                    same as present</label></div>
+                <!--<div class="address-band"><strong><i class="bi bi-geo-alt"></i> Present Address</strong></div>-->
+
+                <div class="col-12 mt-2">
+                    <div class="d-flex align-items-center">
+
+                        <div class="address-band">
+                            <strong>
+                                <i class="bi bi-geo-alt"></i> Present Address
+                            </strong>
+                        </div>
+
+                        <hr class="flex-grow-1 mx-3 my-0">
+
                         </div>
                     </div>
-                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
-                            id="presentCity" class="form-control address-present" placeholder="City / Village"></div>
-                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label>
-                        <select id="presentPO"
-                            class="form-select address-present">
-                            <option value="">Select Post Office</option>
-                            <option>Kolkata GPO</option>
-                            <option>Bhowanipore</option>
-                            <option>Alipore</option>
-                            <option>Barasat</option>
-                            <option>Krishnanagar</option>
-                            <option>Berhampore</option>
-                            <option>Asansol</option>
-                            <option>Durgapur</option>
-                            <option>Siliguri</option>
-                            <option>Malda</option>
-                            <option>Midnapore</option>
-                            <option>Purulia</option>
-                        </select></div>
 
-                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><select id="presentPO"
-                            class="form-select address-present">
-                            <option value="">Select Post Office</option>
-                            <option>Kolkata GPO</option>
-                            <option>Bhowanipore</option>
-                            <option>Alipore</option>
-                            <option>Barasat</option>
-                            <option>Krishnanagar</option>
-                            <option>Berhampore</option>
-                            <option>Asansol</option>
-                            <option>Durgapur</option>
-                            <option>Siliguri</option>
-                            <option>Malda</option>
-                            <option>Midnapore</option>
-                            <option>Purulia</option>
-                        </select></div>
-                    <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="presentPS" class="form-select address-present">
-                            <option value="">Select Police Station</option>
-                            <option>Hare Street PS</option>
-                            <option>Bhowanipore PS</option>
-                            <option>Alipore PS</option>
-                            <option>Barasat PS</option>
-                            <option>Krishnanagar PS</option>
-                            <option>Berhampore PS</option>
-                            <option>Asansol South PS</option>
-                            <option>Durgapur PS</option>
-                            <option>Siliguri PS</option>
-                            <option>English Bazar PS</option>
-                            <option>Kotwali PS</option>
-                            <option>Purulia Sadar PS</option>
-                        </select></div>
+                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
+                            id="presentCity" class="form-control address-present" placeholder=""></div>
+                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><input id="presentPO"
+                            class="form-control address-present" placeholder=""></div>
+
+                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><input id="presentPO"
+                            class="form-control address-present" placeholder=""></div>
+
+                    <div class="col-md-3"><label class="form-label required">State</label><select
+                            id="presentState" class="form-select address-present">
+                            <option value="">Select State</option>
+                            <option>West Bengal</option>
+                            
+                        </select>
+                    </div>
+
+
                     <div class="col-md-3"><label class="form-label required">District</label><select
                             id="presentDistrict" class="form-select address-present">
                             <option value="">Select District</option>
@@ -222,61 +196,9 @@
                             <option>South 24 Parganas</option>
                             <option>Uttar Dinajpur</option>
                         </select></div>
-                    <div class="col-md-3"><label class="form-label required">PIN Code</label>
-                    <input
-                            type="text"
-                            id="presentPin"
-                            name="presentPin"
-                            class="form-control address-present"
-                            placeholder="PIN Code"
-                            maxlength="6"
-                            pattern="[0-9]{6}"
-                            required
-                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)">
-                    </div>
-                    <div class="col-12 mt-2">
-                        <div class="address-band"><strong><i class="bi bi-house-check"></i> Permanent Address</strong>
-                        </div>
-                    </div>
-                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
-                            id="permanentCity" class="form-control address-permanent" placeholder="City / Village">
-                    </div>
-                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><select id="permanentPO"
-                            class="form-select address-permanent">
-                            <option value="">Select Post Office</option>
-                            <option>Kolkata GPO</option>
-                            <option>Bhowanipore</option>
-                            <option>Alipore</option>
-                            <option>Barasat</option>
-                            <option>Krishnanagar</option>
-                            <option>Berhampore</option>
-                            <option>Asansol</option>
-                            <option>Durgapur</option>
-                            <option>Siliguri</option>
-                            <option>Malda</option>
-                            <option>Midnapore</option>
-                            <option>Purulia</option>
-                        </select></div>
 
-
-                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><select id="presentPO"
-                            class="form-select address-present">
-                            <option value="">Select City/Town</option>
-                            <option>Kolkata GPO</option>
-                            <option>Bhowanipore</option>
-                            <option>Alipore</option>
-                            <option>Barasat</option>
-                            <option>Krishnanagar</option>
-                            <option>Berhampore</option>
-                            <option>Asansol</option>
-                            <option>Durgapur</option>
-                            <option>Siliguri</option>
-                            <option>Malda</option>
-                            <option>Midnapore</option>
-                            <option>Purulia</option>
-                        </select></div>    
                     <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="permanentPS" class="form-select address-permanent">
+                            id="presentPS" class="form-select address-present">
                             <option value="">Select Police Station</option>
                             <option>Hare Street PS</option>
                             <option>Bhowanipore PS</option>
@@ -291,6 +213,76 @@
                             <option>Kotwali PS</option>
                             <option>Purulia Sadar PS</option>
                         </select></div>
+                    
+                    <div class="col-md-3"><label class="form-label required">PIN Code</label>
+                    <input
+                            type="text"
+                            id="presentPin"
+                            name="presentPin"
+                            class="form-control address-present"
+                            placeholder="PIN Code"
+                            maxlength="6"
+                            pattern="[0-9]{6}"
+                            required
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)">
+                    </div>
+
+                    <!---<div class="col-9 mt-2">
+                        <div class="address-band"><strong><i class="bi bi-house-check"></i> Permanent Address</strong>
+                        </div>
+                    </div>
+
+                    
+
+                    <div class="col-3">
+                        
+                            <div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"
+                                    id="sameAddress"><label class="form-check-label" for="sameAddress">Permanent address
+                                    same as present</label></div>
+                        
+                    </div> -->
+
+                    <div class="col-12 mt-2">
+                    <div class="d-flex align-items-center">
+                        
+                        <div class="address-band">
+                            <strong>
+                                <i class="bi bi-house-check"></i> Permanent Address
+                            </strong>
+                        </div>
+
+                        <hr class="flex-grow-1 mx-3 my-0">
+
+                        <div class="form-check form-switch mb-0">
+                            <input class="form-check-input" type="checkbox" id="sameAddress">
+                            <label class="form-check-label" for="sameAddress">
+                                Permanent address same as present
+                            </label>
+                        </div>
+
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
+                            id="permanentCity" class="form-control address-permanent" placeholder="">
+                    </div>
+                 
+                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><input id="permanentPO"
+                            class="form-control address-permanent" placeholder=""></div>
+                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><input id="permanentPO"
+                            class="form-control address-permanent" placeholder=""></div>
+
+                    <div class="col-md-3"><label class="form-label required">State</label><select
+                            id="permanentState" class="form-select address-permanent">
+                            <option value="">Select State</option>
+                            <option>West Bengal</option>
+                            
+                        </select>
+                    </div>
+                    
                     <div class="col-md-3"><label class="form-label required">District</label><select
                             id="permanentDistrict" class="form-select address-permanent">
                             <option value="">Select District</option>
@@ -317,6 +309,23 @@
                             <option>Purulia</option>
                             <option>South 24 Parganas</option>
                             <option>Uttar Dinajpur</option>
+                        </select></div>
+
+                        <div class="col-md-3"><label class="form-label required">Police Station</label><select
+                            id="permanentPS" class="form-select address-permanent">
+                            <option value="">Select Police Station</option>
+                            <option>Hare Street PS</option>
+                            <option>Bhowanipore PS</option>
+                            <option>Alipore PS</option>
+                            <option>Barasat PS</option>
+                            <option>Krishnanagar PS</option>
+                            <option>Berhampore PS</option>
+                            <option>Asansol South PS</option>
+                            <option>Durgapur PS</option>
+                            <option>Siliguri PS</option>
+                            <option>English Bazar PS</option>
+                            <option>Kotwali PS</option>
+                            <option>Purulia Sadar PS</option>
                         </select></div>
                     <div class="col-md-3"><label class="form-label required">PIN Code</label>
                     <input
