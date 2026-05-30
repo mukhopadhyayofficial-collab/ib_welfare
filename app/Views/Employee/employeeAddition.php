@@ -163,7 +163,13 @@
                     <div class="col-md-3"><label class="form-label required">State</label><select
                             id="presentState" class="form-select address-present">
                             <option value="">Select State</option>
-                            <option>West Bengal</option>
+                            <?php foreach($stateDetails as $item) { ?>
+
+                                <option value="<?= $item['id']; ?>">
+                                    <?= $item['state_name']; ?>
+                                </option>   
+
+                            <?php } ?>
                             
                         </select>
                     </div>
@@ -278,7 +284,13 @@
                     <div class="col-md-3"><label class="form-label required">State</label><select
                             id="permanentState" class="form-select address-permanent">
                             <option value="">Select State</option>
-                            <option>West Bengal</option>
+                            <?php foreach($stateDetails as $item) { ?>
+
+                                <option value="<?= $item['id']; ?>">
+                                    <?= $item['state_name']; ?>
+                                </option>   
+
+                            <?php } ?>
                             
                         </select>
                     </div>

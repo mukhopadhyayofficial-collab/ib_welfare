@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 27, 2026 at 08:49 AM
--- Server version: 8.0.30
--- PHP Version: 8.1.10
+-- Generation Time: May 30, 2026 at 09:52 AM
+-- Server version: 8.4.3
+-- PHP Version: 8.3.16
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,6 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `gb_district` (
   `gb_district_id` int NOT NULL,
+  `state_id` int NOT NULL,
   `gb_district_name` varchar(255) NOT NULL,
   `gb_district_status` enum('1','2') NOT NULL DEFAULT '1' COMMENT '1->Active;2->Inactive'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -37,50 +38,50 @@ CREATE TABLE `gb_district` (
 -- Dumping data for table `gb_district`
 --
 
-INSERT INTO `gb_district` (`gb_district_id`, `gb_district_name`, `gb_district_status`) VALUES
-(1, 'Paschim Medinipur', '1'),
-(2, 'Purba Medinipur', '1'),
-(3, 'Bashirhat Police District', '1'),
-(4, 'Birbhum', '1'),
-(5, 'Coochbehar', '1'),
-(6, 'Dakshin Dinajpur', '1'),
-(7, 'Darjeeling', '1'),
-(8, 'Diamond Harbour PD', '1'),
-(9, 'Hooghly Rural', '1'),
-(10, 'Howrah rural', '1'),
-(11, 'Islampur PD', '1'),
-(12, 'Jalpaiguri', '1'),
-(13, 'Jangipur PD', '1'),
-(14, 'Jhargram', '1'),
-(15, 'Kalimpong', '1'),
-(16, 'Krishnanagar PD', '1'),
-(17, 'Malda', '1'),
-(18, 'Murshidabad PD', '1'),
-(19, 'Purba Burdwan', '1'),
-(20, 'Siliguri PC', '1'),
-(21, 'Bidhannagar PC', '1'),
-(22, 'Barrackpur PC', '1'),
-(23, 'ADPC', '1'),
-(24, 'ChandanNagar PC', '1'),
-(25, 'HOWRAH PC', '1'),
-(26, 'Sundarban PD', '1'),
-(27, 'Raiganj PD', '1'),
-(28, 'Ranaghat PD', '1'),
-(29, 'Purulia', '1'),
-(30, 'Alipurduar', '1'),
-(31, 'Bongoan PD', '1'),
-(32, 'Baruipur PD', '1'),
-(33, 'Bankura', '1'),
-(34, 'Barasat PD', '1'),
-(35, 'Kolkata', '1'),
-(37, 'North 24 pgs', '1'),
-(38, 'South 24 Pgs', '1'),
-(40, 'Uttar Dinajpur', '1'),
-(41, 'Nadia', '2'),
-(46, 'Paschim Bardhaman', '1'),
-(47, 'ALL', '1'),
-(48, 'Others', '1'),
-(49, 'Purba Bardhaman', '1');
+INSERT INTO `gb_district` (`gb_district_id`, `state_id`, `gb_district_name`, `gb_district_status`) VALUES
+(1, 28, 'Paschim Medinipur', '1'),
+(2, 28, 'Purba Medinipur', '1'),
+(3, 28, 'Bashirhat Police District', '1'),
+(4, 28, 'Birbhum', '1'),
+(5, 28, 'Coochbehar', '1'),
+(6, 28, 'Dakshin Dinajpur', '1'),
+(7, 28, 'Darjeeling', '1'),
+(8, 28, 'Diamond Harbour PD', '1'),
+(9, 28, 'Hooghly Rural', '1'),
+(10, 28, 'Howrah rural', '1'),
+(11, 28, 'Islampur PD', '1'),
+(12, 28, 'Jalpaiguri', '1'),
+(13, 28, 'Jangipur PD', '1'),
+(14, 28, 'Jhargram', '1'),
+(15, 28, 'Kalimpong', '1'),
+(16, 28, 'Krishnanagar PD', '1'),
+(17, 28, 'Malda', '1'),
+(18, 28, 'Murshidabad PD', '1'),
+(19, 28, 'Purba Burdwan', '1'),
+(20, 28, 'Siliguri PC', '1'),
+(21, 28, 'Bidhannagar PC', '1'),
+(22, 28, 'Barrackpur PC', '1'),
+(23, 28, 'ADPC', '1'),
+(24, 28, 'ChandanNagar PC', '1'),
+(25, 28, 'HOWRAH PC', '1'),
+(26, 28, 'Sundarban PD', '1'),
+(27, 28, 'Raiganj PD', '1'),
+(28, 28, 'Ranaghat PD', '1'),
+(29, 28, 'Purulia', '1'),
+(30, 28, 'Alipurduar', '1'),
+(31, 28, 'Bongoan PD', '1'),
+(32, 28, 'Baruipur PD', '1'),
+(33, 28, 'Bankura', '1'),
+(34, 28, 'Barasat PD', '1'),
+(35, 28, 'Kolkata', '1'),
+(37, 28, 'North 24 pgs', '1'),
+(38, 28, 'South 24 Pgs', '1'),
+(40, 28, 'Uttar Dinajpur', '1'),
+(41, 28, 'Nadia', '2'),
+(46, 28, 'Paschim Bardhaman', '1'),
+(47, 28, 'ALL', '1'),
+(48, 28, 'Others', '1'),
+(49, 28, 'Purba Bardhaman', '1');
 
 -- --------------------------------------------------------
 
@@ -775,6 +776,123 @@ INSERT INTO `master_designation_rank` (`id`, `rank_name`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `master_liu`
+--
+
+CREATE TABLE `master_liu` (
+  `id` int NOT NULL,
+  `liu_name` varchar(150) NOT NULL,
+  `status` enum('Active','Inactive') DEFAULT 'Active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `master_liu`
+--
+
+INSERT INTO `master_liu` (`id`, `liu_name`, `status`) VALUES
+(1, 'LIU Alipurduar', 'Active'),
+(2, 'LIU Bankura', 'Active'),
+(3, 'LIU Birbhum', 'Active'),
+(4, 'LIU Cooch Behar', 'Active'),
+(5, 'LIU Dakshin Dinajpur', 'Active'),
+(6, 'LIU Darjeeling', 'Active'),
+(7, 'LIU Hooghly', 'Active'),
+(8, 'LIU Howrah', 'Active'),
+(9, 'LIU Jalpaiguri', 'Active'),
+(10, 'LIU Jhargram', 'Active'),
+(11, 'LIU Kalimpong', 'Active'),
+(12, 'LIU Kolkata', 'Active'),
+(13, 'LIU Malda', 'Active'),
+(14, 'LIU Murshidabad', 'Active'),
+(15, 'LIU Nadia', 'Active'),
+(16, 'LIU North 24 Parganas', 'Active'),
+(17, 'LIU Paschim Bardhaman', 'Active'),
+(18, 'LIU Paschim Medinipur', 'Active'),
+(19, 'LIU Purba Bardhaman', 'Active'),
+(20, 'LIU Purba Medinipur', 'Active'),
+(21, 'LIU Purulia', 'Active'),
+(22, 'LIU South 24 Parganas', 'Active'),
+(23, 'LIU Uttar Dinajpur', 'Active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_relationship`
+--
+
+CREATE TABLE `master_relationship` (
+  `id` int NOT NULL,
+  `relationship_name` varchar(100) NOT NULL,
+  `status` enum('Active','Inactive') DEFAULT 'Active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `master_relationship`
+--
+
+INSERT INTO `master_relationship` (`id`, `relationship_name`, `status`) VALUES
+(1, 'Father', 'Active'),
+(2, 'Mother', 'Active'),
+(3, 'Spouse', 'Active'),
+(4, 'Son', 'Active'),
+(5, 'Daughter', 'Active'),
+(6, 'Brother', 'Active'),
+(7, 'Sister', 'Active'),
+(8, 'Grandfather', 'Active'),
+(9, 'Grandmother', 'Active'),
+(10, 'Father-in-law', 'Active'),
+(11, 'Mother-in-law', 'Active'),
+(12, 'Other', 'Active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `master_state`
+--
+
+CREATE TABLE `master_state` (
+  `id` int NOT NULL,
+  `state_name` varchar(100) NOT NULL,
+  `status` enum('Active','Inactive') DEFAULT 'Active'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `master_state`
+--
+
+INSERT INTO `master_state` (`id`, `state_name`, `status`) VALUES
+(1, 'Andhra Pradesh', 'Inactive'),
+(2, 'Arunachal Pradesh', 'Inactive'),
+(3, 'Assam', 'Inactive'),
+(4, 'Bihar', 'Inactive'),
+(5, 'Chhattisgarh', 'Inactive'),
+(6, 'Goa', 'Inactive'),
+(7, 'Gujarat', 'Inactive'),
+(8, 'Haryana', 'Inactive'),
+(9, 'Himachal Pradesh', 'Inactive'),
+(10, 'Jharkhand', 'Inactive'),
+(11, 'Karnataka', 'Inactive'),
+(12, 'Kerala', 'Inactive'),
+(13, 'Madhya Pradesh', 'Inactive'),
+(14, 'Maharashtra', 'Inactive'),
+(15, 'Manipur', 'Inactive'),
+(16, 'Meghalaya', 'Inactive'),
+(17, 'Mizoram', 'Inactive'),
+(18, 'Nagaland', 'Inactive'),
+(19, 'Odisha', 'Inactive'),
+(20, 'Punjab', 'Inactive'),
+(21, 'Rajasthan', 'Inactive'),
+(22, 'Sikkim', 'Inactive'),
+(23, 'Tamil Nadu', 'Inactive'),
+(24, 'Telangana', 'Inactive'),
+(25, 'Tripura', 'Inactive'),
+(26, 'Uttar Pradesh', 'Inactive'),
+(27, 'Uttarakhand', 'Inactive'),
+(28, 'West Bengal', 'Active');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `master_unit`
 --
 
@@ -790,13 +908,13 @@ CREATE TABLE `master_unit` (
 
 INSERT INTO `master_unit` (`id`, `unit_name`, `status`) VALUES
 (1, 'IB HQ, WB', 'Active'),
-(2, 'District', 'Active'),
-(3, 'Police Commissionerate', 'Active'),
-(4, 'Police District', 'Active'),
-(5, 'Traffic Unit', 'Active'),
-(6, 'Special Branch', 'Active'),
-(7, 'Medical Cell', 'Active'),
-(8, 'Reserve Office', 'Active'),
+(2, 'LIU', 'Active'),
+(3, 'Police Commissionerate', 'Inactive'),
+(4, 'Police District', 'Inactive'),
+(5, 'Traffic Unit', 'Inactive'),
+(6, 'Special Branch', 'Inactive'),
+(7, 'Medical Cell', 'Inactive'),
+(8, 'Reserve Office', 'Inactive'),
 (9, 'Other', 'Active');
 
 -- --------------------------------------------------------
@@ -945,6 +1063,24 @@ ALTER TABLE `master_designation_rank`
   ADD UNIQUE KEY `rank_name` (`rank_name`);
 
 --
+-- Indexes for table `master_liu`
+--
+ALTER TABLE `master_liu`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `master_relationship`
+--
+ALTER TABLE `master_relationship`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `master_state`
+--
+ALTER TABLE `master_state`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `master_unit`
 --
 ALTER TABLE `master_unit`
@@ -998,10 +1134,28 @@ ALTER TABLE `master_designation_rank`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
+-- AUTO_INCREMENT for table `master_liu`
+--
+ALTER TABLE `master_liu`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `master_relationship`
+--
+ALTER TABLE `master_relationship`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `master_state`
+--
+ALTER TABLE `master_state`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
 -- AUTO_INCREMENT for table `master_unit`
 --
 ALTER TABLE `master_unit`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `users`
