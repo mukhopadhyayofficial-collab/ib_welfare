@@ -6,6 +6,8 @@ use App\Models\UserModel;
 use App\Models\UnitModel;
 use App\Models\LiuModel;
 use App\Models\RelationshipModel;
+use App\Models\StateModel;
+use App\Models\DistrictModel;
 
 class Employee extends BaseController {
     private function uid(): int
@@ -64,6 +66,8 @@ class Employee extends BaseController {
         $unitModel = new UnitModel();
         $liuModel = new LiuModel();
         $relationshipModel = new RelationshipModel();
+        $stateModel = new StateModel();
+        $districtModel = new DistrictModel();
 
         if ($r = $this->requireLogin()) return $r;
         $uid        = $this->uid();
@@ -72,6 +76,8 @@ class Employee extends BaseController {
         $unitModel = $unitModel->where('status', 'Active')->findAll();
         $liuModel = $liuModel->where('status', 'Active')->findAll();
         $relationshipModel = $relationshipModel->where('status', 'Active')->findAll();
+        $stateModel = $stateModel->where('status', 'Active')->findAll();
+        //$districtModel = $districtModel->where('status', '1')->findAll();
 
         $data = [
             'title'    => 'Add Employee',
@@ -81,6 +87,7 @@ class Employee extends BaseController {
             'unitDetails'  => $unitModel,
             'liuDetails'  => $liuModel,
             'relationshipDetails'  => $relationshipModel,
+            //'stateDetails'  => $stateModel,
         ];
         return view('_header', $data) . view('Employee/employeeAddition', $data);
     }
