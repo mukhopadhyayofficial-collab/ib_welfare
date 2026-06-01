@@ -8,6 +8,7 @@ use App\Models\LiuModel;
 use App\Models\RelationshipModel;
 use App\Models\StateModel;
 use App\Models\DistrictModel;
+use App\Models\PoliceStationModel;
 
 class Employee extends BaseController {
     private function uid(): int
@@ -77,7 +78,7 @@ class Employee extends BaseController {
         $liuModel = $liuModel->where('status', 'Active')->findAll();
         $relationshipModel = $relationshipModel->where('status', 'Active')->findAll();
         $stateModel = $stateModel->where('status', 'Active')->findAll();
-        //$districtModel = $districtModel->where('status', '1')->findAll();
+        $districtModel = $districtModel->where('gb_district_status', '1')->findAll();
 
         $data = [
             'title'    => 'Add Employee',
@@ -87,7 +88,7 @@ class Employee extends BaseController {
             'unitDetails'  => $unitModel,
             'liuDetails'  => $liuModel,
             'relationshipDetails'  => $relationshipModel,
-            //'stateDetails'  => $stateModel,
+            'stateDetails'  => $stateModel,
         ];
         return view('_header', $data) . view('Employee/employeeAddition', $data);
     }
@@ -191,4 +192,35 @@ class Employee extends BaseController {
         ];
         return view('_header', $data) . view('Employee/reports', $data);
     }
+
+    public function getDistricts($state_id)
+    {
+        $districtModel = new DistrictModel();
+
+        $districtModel = $districtModel
+            ->where('state_id', $state_id)
+            ->where('gb_district_status', 1)
+            ->orderBy('gb_district_name', 'ASC')
+            ->findAll();
+
+        echo json_encode(
+            $districtModel
+        );
+    }
+
+    public function getPoliceStation($district_id)
+    {
+        $policeStationModel = new PoliceStationModel();
+
+        $policeStationModel = $policeStationModel
+            ->where('gb_district_id', $district_id)
+            ->where('gb_ps_status', 1)
+            ->orderBy('gb_ps_name', 'ASC')
+            ->findAll();
+
+        echo json_encode(
+            $policeStationModel
+        );
+    }
+
 }

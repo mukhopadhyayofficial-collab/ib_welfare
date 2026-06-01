@@ -149,8 +149,8 @@
 
                         <hr class="flex-grow-1 mx-3 my-0">
 
-                        </div>
                     </div>
+                </div>
 
                     <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
                             id="presentCity" class="form-control address-present" placeholder=""></div>
@@ -176,48 +176,11 @@
 
 
                     <div class="col-md-3"><label class="form-label required">District</label><select
-                            id="presentDistrict" class="form-select address-present">
-                            <option value="">Select District</option>
-                            <option>Kolkata</option>
-                            <option>Alipurduar</option>
-                            <option>Bankura</option>
-                            <option>Birbhum</option>
-                            <option>Cooch Behar</option>
-                            <option>Dakshin Dinajpur</option>
-                            <option>Darjeeling</option>
-                            <option>Hooghly</option>
-                            <option>Howrah</option>
-                            <option>Jalpaiguri</option>
-                            <option>Jhargram</option>
-                            <option>Kalimpong</option>
-                            <option>Malda</option>
-                            <option>Murshidabad</option>
-                            <option>Nadia</option>
-                            <option>North 24 Parganas</option>
-                            <option>Paschim Bardhaman</option>
-                            <option>Paschim Medinipur</option>
-                            <option>Purba Bardhaman</option>
-                            <option>Purba Medinipur</option>
-                            <option>Purulia</option>
-                            <option>South 24 Parganas</option>
-                            <option>Uttar Dinajpur</option>
+                            id="presentDistrict" class="form-select address-present">                            
                         </select></div>
 
                     <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="presentPS" class="form-select address-present">
-                            <option value="">Select Police Station</option>
-                            <option>Hare Street PS</option>
-                            <option>Bhowanipore PS</option>
-                            <option>Alipore PS</option>
-                            <option>Barasat PS</option>
-                            <option>Krishnanagar PS</option>
-                            <option>Berhampore PS</option>
-                            <option>Asansol South PS</option>
-                            <option>Durgapur PS</option>
-                            <option>Siliguri PS</option>
-                            <option>English Bazar PS</option>
-                            <option>Kotwali PS</option>
-                            <option>Purulia Sadar PS</option>
+                            id="presentPS" class="form-select address-present">                           
                         </select></div>
                     
                     <div class="col-md-3"><label class="form-label required">PIN Code</label>
@@ -296,48 +259,11 @@
                     </div>
                     
                     <div class="col-md-3"><label class="form-label required">District</label><select
-                            id="permanentDistrict" class="form-select address-permanent">
-                            <option value="">Select District</option>
-                            <option>Kolkata</option>
-                            <option>Alipurduar</option>
-                            <option>Bankura</option>
-                            <option>Birbhum</option>
-                            <option>Cooch Behar</option>
-                            <option>Dakshin Dinajpur</option>
-                            <option>Darjeeling</option>
-                            <option>Hooghly</option>
-                            <option>Howrah</option>
-                            <option>Jalpaiguri</option>
-                            <option>Jhargram</option>
-                            <option>Kalimpong</option>
-                            <option>Malda</option>
-                            <option>Murshidabad</option>
-                            <option>Nadia</option>
-                            <option>North 24 Parganas</option>
-                            <option>Paschim Bardhaman</option>
-                            <option>Paschim Medinipur</option>
-                            <option>Purba Bardhaman</option>
-                            <option>Purba Medinipur</option>
-                            <option>Purulia</option>
-                            <option>South 24 Parganas</option>
-                            <option>Uttar Dinajpur</option>
+                            id="permanentDistrict" class="form-select address-permanent">                            
                         </select></div>
 
                         <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="permanentPS" class="form-select address-permanent">
-                            <option value="">Select Police Station</option>
-                            <option>Hare Street PS</option>
-                            <option>Bhowanipore PS</option>
-                            <option>Alipore PS</option>
-                            <option>Barasat PS</option>
-                            <option>Krishnanagar PS</option>
-                            <option>Berhampore PS</option>
-                            <option>Asansol South PS</option>
-                            <option>Durgapur PS</option>
-                            <option>Siliguri PS</option>
-                            <option>English Bazar PS</option>
-                            <option>Kotwali PS</option>
-                            <option>Purulia Sadar PS</option>
+                            id="permanentPS" class="form-select address-permanent">                            
                         </select></div>
                     <div class="col-md-3"><label class="form-label required">PIN Code</label>
                     <input
@@ -469,43 +395,142 @@
 </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </body>
 
 </html>
 <script>
-document.getElementById('dob').addEventListener('change', function () {
-    const dob = new Date(this.value);
-    const today = new Date();
+    document.getElementById('dob').addEventListener('change', function () {
+        const dob = new Date(this.value);
+        const today = new Date();
 
-    let age = today.getFullYear() - dob.getFullYear();
-    const monthDiff = today.getMonth() - dob.getMonth();
+        let age = today.getFullYear() - dob.getFullYear();
+        const monthDiff = today.getMonth() - dob.getMonth();
 
-    if (
-        monthDiff < 0 ||
-        (monthDiff === 0 && today.getDate() < dob.getDate())
-    ) {
-        age--;
-    }
+        if (
+            monthDiff < 0 ||
+            (monthDiff === 0 && today.getDate() < dob.getDate())
+        ) {
+            age--;
+        }
 
-    document.getElementById('age').value = age;
-});
+        document.getElementById('age').value = age;
+    });
 
-// document.getElementById('unitSelect').addEventListener('change', function () {
-//     debugger;
-//     let selectedText = this.options[this.selectedIndex].text;
+    document.getElementById('presentState').addEventListener('change', function () {
+        //alert();
 
-//     let liuBox = document.getElementById('liuUnitBox');
+        var state_id = $(this).val();
 
-//     if (selectedText === 'LIU') {
+        $.ajax({
+            url: '<?= base_url('getDistricts') ?>/' + state_id,
+            type: 'GET',
+            dataType: 'json',
+            success : function(data)
+            {
+                console.log(data);
+                $('#presentDistrict').html(
+                    '<option value="0">Select District</option>'
+                );
 
-//         liuBox.classList.remove('d-none');
+                $.each(data, function(key, value){
 
-//     } else {
+                    $('#presentDistrict').append(
+                        '<option value="'+value.gb_district_id+'">'+
+                        value.gb_district_name+
+                        '</option>'
+                    );
+                });
 
-//         liuBox.classList.add('d-none');
+            }
+        });
+    });
 
-//     }
+    document.getElementById('presentDistrict').addEventListener('change', function () {
+        //alert();
 
-// });
+        var district_id = $(this).val();
+
+        $.ajax({
+            url: '<?= base_url('getPoliceStation') ?>/' + district_id,
+            type: 'GET',
+            dataType: 'json',
+            success : function(data)
+            {
+                console.log(data);
+                $('#presentPS').html(
+                    '<option value="0">Select Police Station</option>'
+                );
+
+                $.each(data, function(key, value){
+
+                    $('#presentPS').append(
+                        '<option value="'+value.gb_ps_id+'">'+
+                        value.gb_ps_name+
+                        '</option>'
+                    );
+                });
+
+            }
+        });
+    });
+
+    document.getElementById('permanentState').addEventListener('change', function () {
+        //alert();
+
+        var state_id = $(this).val();
+
+        $.ajax({
+            url: '<?= base_url('getDistricts') ?>/' + state_id,
+            type: 'GET',
+            dataType: 'json',
+            success : function(data)
+            {
+                console.log(data);
+                $('#permanentDistrict').html(
+                    '<option value="0">Select District</option>'
+                );
+
+                $.each(data, function(key, value){
+
+                    $('#permanentDistrict').append(
+                        '<option value="'+value.gb_district_id+'">'+
+                        value.gb_district_name+
+                        '</option>'
+                    );
+                });
+
+            }
+        });
+    });
+
+    document.getElementById('permanentDistrict').addEventListener('change', function () {
+        //alert();
+
+        var district_id = $(this).val();
+
+        $.ajax({
+            url: '<?= base_url('getPoliceStation') ?>/' + district_id,
+            type: 'GET',
+            dataType: 'json',
+            success : function(data)
+            {
+                console.log(data);
+                $('#permanentPS').html(
+                    '<option value="0">Select Police Station</option>'
+                );
+
+                $.each(data, function(key, value){
+
+                    $('#permanentPS').append(
+                        '<option value="'+value.gb_ps_id+'">'+
+                        value.gb_ps_name+
+                        '</option>'
+                    );
+                });
+
+            }
+        });
+    });
 
 </script>
