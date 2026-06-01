@@ -1491,6 +1491,10 @@ WARNING - 2026-05-29 17:46:14 --> [DEPRECATED] Creation of dynamic property App\
  4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
 INFO - 2026-05-29 17:46:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 =======
+<<<<<<< HEAD
+=======
+>>>>>>> refs/remotes/origin/main
+>>>>>>> refs/remotes/origin/main
 >>>>>>> refs/remotes/origin/main
 >>>>>>> refs/remotes/origin/main
 INFO - 2026-05-29 17:36:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

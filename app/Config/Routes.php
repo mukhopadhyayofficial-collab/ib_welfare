@@ -18,7 +18,12 @@ $routes->get('/logout', 'Home::logout');
 $routes->get('/', 'Home::dashboard');
 
 $routes->get('/employee-management', 'Employee::employeeManagement');
+
 $routes->get('/add-employee', 'Employee::addEmployee');
+$routes->get('getDistricts/(:num)', 'Employee::getDistricts/$1');
+$routes->get('getPoliceStation/(:num)', 'Employee::getPoliceStation/$1');
+
+
 $routes->post('/insert-employee', 'Employee::insertEmployee');
 $routes->get('/edit-employee/(:num)', 'Employee::editEmployee/$1');
 $routes->post('/update-employee/(:num)', 'Employee::updateEmployee/$1');
