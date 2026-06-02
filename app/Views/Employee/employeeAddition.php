@@ -18,10 +18,14 @@
             <form>
                 <div class="section-title"><i class="bi bi-person-badge"></i> Service & Personal Details</div>
                 <div class="row g-3 mb-4">
-                    <div class="col-md-3"><label class="form-label required">Employee ID </label><input
-                            class="form-control" placeholder="EMP001"></div>
-                    <div class="col-md-6"><label class="form-label required">Full Name</label><input type="text"
-                            class="form-control" placeholder="Name of personnel"></div>
+                    <div class="col-md-3">
+                        <label class="form-label required">Employee ID </label>
+                            <input class="form-control" name="user_type" placeholder="EMP001">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label required">Full Name</label>
+                        <input type="text" class="form-control" name="full_name" placeholder="Name of personnel">
+                    </div>
                     <div class="col-md-3"><label class="form-label">Rank / Designation</label>
                         <select class="form-select">
                             <option value="">Select Rank</option>
@@ -152,85 +156,85 @@
                     </div>
                 </div>
 
-                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
-                            id="presentCity" class="form-control address-present" placeholder=""></div>
-                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><input id="presentPO"
-                            class="form-control address-present" placeholder=""></div>
+                <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
+                        id="presentCity" class="form-control address-present" placeholder=""></div>
+                <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><input id="presentPO"
+                        class="form-control address-present" placeholder=""></div>
 
-                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><input id="presentPO"
-                            class="form-control address-present" placeholder=""></div>
+                <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><input id="presentPO"
+                        class="form-control address-present" placeholder=""></div>
 
-                    <div class="col-md-3"><label class="form-label required">State</label><select
-                            id="presentState" class="form-select address-present">
-                            <option value="">Select State</option>
-                            <?php foreach($stateDetails as $item) { ?>
+                <div class="col-md-3"><label class="form-label required">State</label><select
+                        id="presentState" class="form-select address-present">
+                        <option value="">Select State</option>
+                        <?php foreach($stateDetails as $item) { ?>
 
-                                <option value="<?= $item['id']; ?>">
-                                    <?= $item['state_name']; ?>
-                                </option>   
+                            <option value="<?= $item['id']; ?>">
+                                <?= $item['state_name']; ?>
+                            </option>   
 
-                            <?php } ?>
-                            
-                        </select>
+                        <?php } ?>
+                        
+                    </select>
+                </div>
+
+
+                <div class="col-md-3"><label class="form-label required">District</label><select
+                        id="presentDistrict" class="form-select address-present">                            
+                    </select></div>
+
+                <div class="col-md-3"><label class="form-label required">Police Station</label><select
+                        id="presentPS" class="form-select address-present">                           
+                    </select></div>
+                
+                <div class="col-md-3"><label class="form-label required">PIN Code</label>
+                <input
+                        type="text"
+                        id="presentPin"
+                        name="presentPin"
+                        class="form-control address-present"
+                        placeholder="PIN Code"
+                        maxlength="6"
+                        pattern="[0-9]{6}"
+                        required
+                        oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)">
+                </div>
+
+                <!---<div class="col-9 mt-2">
+                    <div class="address-band"><strong><i class="bi bi-house-check"></i> Permanent Address</strong>
                     </div>
+                </div>
 
+                
 
-                    <div class="col-md-3"><label class="form-label required">District</label><select
-                            id="presentDistrict" class="form-select address-present">                            
-                        </select></div>
-
-                    <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="presentPS" class="form-select address-present">                           
-                        </select></div>
+                <div class="col-3">
                     
-                    <div class="col-md-3"><label class="form-label required">PIN Code</label>
-                    <input
-                            type="text"
-                            id="presentPin"
-                            name="presentPin"
-                            class="form-control address-present"
-                            placeholder="PIN Code"
-                            maxlength="6"
-                            pattern="[0-9]{6}"
-                            required
-                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)">
-                    </div>
-
-                    <!---<div class="col-9 mt-2">
-                        <div class="address-band"><strong><i class="bi bi-house-check"></i> Permanent Address</strong>
-                        </div>
-                    </div>
-
+                        <div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"
+                                id="sameAddress"><label class="form-check-label" for="sameAddress">Permanent address
+                                same as present</label></div>
                     
+                </div> -->
 
-                    <div class="col-3">
-                        
-                            <div class="form-check form-switch mb-0"><input class="form-check-input" type="checkbox"
-                                    id="sameAddress"><label class="form-check-label" for="sameAddress">Permanent address
-                                    same as present</label></div>
-                        
-                    </div> -->
-
-                    <div class="col-12 mt-2">
-                    <div class="d-flex align-items-center">
-                        
-                        <div class="address-band">
-                            <strong>
-                                <i class="bi bi-house-check"></i> Permanent Address
-                            </strong>
-                        </div>
-
-                        <hr class="flex-grow-1 mx-3 my-0">
-
-                        <div class="form-check form-switch mb-0">
-                            <input class="form-check-input" type="checkbox" id="sameAddress">
-                            <label class="form-check-label" for="sameAddress">
-                                Permanent address same as present
-                            </label>
-                        </div>
-
-                        </div>
+                <div class="col-12 mt-2">
+                <div class="d-flex align-items-center">
+                    
+                    <div class="address-band">
+                        <strong>
+                            <i class="bi bi-house-check"></i> Permanent Address
+                        </strong>
                     </div>
+
+                    <hr class="flex-grow-1 mx-3 my-0">
+
+                    <div class="form-check form-switch mb-0">
+                        <input class="form-check-input" type="checkbox" id="sameAddress">
+                        <label class="form-check-label" for="sameAddress">
+                            Permanent address same as present
+                        </label>
+                    </div>
+
+                    </div>
+                </div>
 
 
 
