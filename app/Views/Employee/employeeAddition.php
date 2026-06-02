@@ -1,3 +1,9 @@
+<?php if(session()->getFlashdata('successMsg')): ?>
+<script>
+    localStorage.removeItem('employeeFormData');
+</script>
+<?php endif; ?>
+
 <main class="main">
     <div class="topbar mb-4">
         <div class="d-flex align-items-center gap-3"><button class="btn btn-primary mobile-menu-btn"
@@ -16,9 +22,10 @@
         <div class="card-body p-4">
             <h5 class="mb-4"><i class="bi bi-person-vcard text-primary"></i> Add / Update Employee Details</h5>
             
-            <form  method="post" action="<?= base_url('insert-employee'); ?>" enctype="multipart/form-data">
+            <form id="employeeForm" method="post" action="<?= base_url('insert-employee'); ?>" enctype="multipart/form-data">
 
                  <?= csrf_field() ?>
+                 
                 <div class="section-title"><i class="bi bi-person-badge"></i>
                     Service & Personal Details
                 </div>
@@ -652,5 +659,54 @@
         previewWindow.document.close();
     }
 
+    document.addEventListener("DOMContentLoaded", function () {
 
+    const form = document.getElementById("employeeForm");
+
+    // Restore saved data
+    const savedData = localStorage.getItem("employeeFormData");
+
+    if (savedData) {
+        const data = JSON.parse(savedData);
+
+        Object.keys(data).forEach(function(name) {
+            const field = form.querySelector(`[name="${name}"]`);
+
+            if (field) {
+
+                if (field.type === "checkbox") {
+                    field.checked = data[name];
+                }
+                else {
+                    field.value = data[name];
+                }
+            }
+        });
+    }
+
+    // Auto save on change
+    form.addEventListener("input", function() {
+
+        let data = {};
+
+        form.querySelectorAll("input, select, textarea").forEach(function(field) {
+
+            if (!field.name) return;
+
+            if (field.type === "file") return;
+
+            if (field.type === "checkbox") {
+                data[field.name] = field.checked;
+            } else {
+                data[field.name] = field.value;
+            }
+        });
+
+        localStorage.setItem(
+            "employeeFormData",
+            JSON.stringify(data)
+        );
+    });
+
+});
 </script>
