@@ -156,6 +156,7 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
                         id="presentCity" class="form-control address-present" placeholder=""></div>
                 <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><input id="presentPO"
@@ -163,6 +164,23 @@
 
                 <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><input id="presentPO"
                         class="form-control address-present" placeholder=""></div>
+=======
+                    <!-- PRESENT ADDRESS -->
+                    <div class="col-md-3">
+                        <label class="form-label required">Address Line1/ Village</label>
+                        <input id="presentLine1" name="presentLine1" class="form-control address-present">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label required">Address Line2/ Post Office</label>
+                        <input id="presentLine2" name="presentLine2" class="form-control address-present">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label required">Address Line3/ City/Town</label>
+                        <input id="presentLine3" name="presentLine3" class="form-control address-present">
+                    </div>
+>>>>>>> refs/remotes/origin/main
 
                 <div class="col-md-3"><label class="form-label required">State</label><select
                         id="presentState" class="form-select address-present">
@@ -239,14 +257,20 @@
 
 
 
-                    <div class="col-md-3"><label class="form-label required">Address Line1/ Village</label><input
-                            id="permanentCity" class="form-control address-permanent" placeholder="">
+                    <div class="col-md-3">
+                        <label class="form-label required">Address Line1/ Village</label>
+                        <input id="permanentLine1" name="permanentLine1" class="form-control address-permanent">
                     </div>
-                 
-                    <div class="col-md-3"><label class="form-label required">Address Line2/ Post Office</label><input id="permanentPO"
-                            class="form-control address-permanent" placeholder=""></div>
-                    <div class="col-md-3"><label class="form-label required">Address Line3/ City/Town</label><input id="permanentPO"
-                            class="form-control address-permanent" placeholder=""></div>
+
+                    <div class="col-md-3">
+                        <label class="form-label required">Address Line2/ Post Office</label>
+                        <input id="permanentLine2" name="permanentLine2" class="form-control address-permanent">
+                    </div>
+
+                    <div class="col-md-3">
+                        <label class="form-label required">Address Line3/ City/Town</label>
+                        <input id="permanentLine3" name="permanentLine3" class="form-control address-permanent">
+                    </div>
 
                     <div class="col-md-3"><label class="form-label required">State</label><select
                             id="permanentState" class="form-select address-permanent">
@@ -269,12 +293,13 @@
                         <div class="col-md-3"><label class="form-label required">Police Station</label><select
                             id="permanentPS" class="form-select address-permanent">                            
                         </select></div>
-                    <div class="col-md-3"><label class="form-label required">PIN Code</label>
-                    <input
+                    <div class="col-md-3">
+                        <label class="form-label required">PIN Code</label>
+                        <input
                             type="text"
-                            id="presentPin"
-                            name="presentPin"
-                            class="form-control address-present"
+                            id="permanentPin"
+                            name="permanentPin"
+                            class="form-control address-permanent"
                             placeholder="PIN Code"
                             maxlength="6"
                             pattern="[0-9]{6}"
@@ -336,31 +361,38 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input class="form-control" placeholder="Family member name"></td>
-                                <td><select class="form-select relationship-dropdown">
+                                <td>
+                                    <input name="family_name[]" class="form-control" placeholder="Family member name">
+                                </td>
+
+                                <td>
+                                    <select name="relationship[]" class="form-select relationship-dropdown">
                                         <option value="" selected disabled>-- Select Relationship --</option>
                                         <?php foreach($relationshipDetails as $item) { ?>
-
                                             <option value="<?= $item['id']; ?>">
                                                 <?= $item['relationship_name']; ?>
-                                            </option>   
-
+                                            </option>
                                         <?php } ?>
-                                    </select></td>
-                                <td><input type="date" id="dob" class="form-control"></td>
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <input type="date" name="family_dob[]" class="form-control">
+                                </td>
+
                                 <td>
                                     <input
                                         type="tel"
-                                        name="mobile"
-                                        class="form-control"
+                                        name="family_mobile[]"
+                                        class="form-control family-mobile"
                                         placeholder="Enter 10-digit mobile number"
                                         maxlength="10"
                                         pattern="[6-9][0-9]{9}"
-                                        required
                                         oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
-                                
                                 </td>
-                                <td><select class="form-select">
+
+                                <td>
+                                    <select name="family_blood_group[]" class="form-select">
                                         <option value="">Select Blood Group</option>
                                         <option>A+</option>
                                         <option>A-</option>
@@ -370,9 +402,14 @@
                                         <option>AB-</option>
                                         <option>O+</option>
                                         <option>O-</option>
-                                    </select></td>
-                                <td><button type="button" class="btn btn-sm btn-danger"
-                                        onclick="removeDependentRow(this)"><i class="bi bi-trash"></i></button></td>
+                                    </select>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-sm btn-danger" onclick="removeDependentRow(this)">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -388,10 +425,17 @@
                             Follow-up</label><textarea class="form-control" rows="3"></textarea></div>
                 </div>
                 <div class="mt-4">
-                    <button class="btn quick-btn bg-purple requires-super"><i class="bi bi-save"></i> Save Employee
-                        Details</button>
-                    <button type="reset" class="btn reset-fancy rounded-pill px-4"><i
-                            class="bi bi-arrow-counterclockwise"></i> Reset</button>
+                    <button type="button" class="btn btn-info rounded-pill px-4" onclick="previewEmployeeDetails()">
+                        <i class="bi bi-eye"></i> Preview
+                    </button>
+
+                    <button type="submit" class="btn quick-btn bg-purple requires-super">
+                        <i class="bi bi-save"></i> Save Employee Details
+                    </button>
+
+                    <button type="reset" class="btn reset-fancy rounded-pill px-4">
+                        <i class="bi bi-arrow-counterclockwise"></i> Reset
+                    </button>
                 </div>
             </form>
         </div>
@@ -537,4 +581,118 @@
         });
     });
 
+    document.getElementById('sameAddress').addEventListener('change', function () {
+
+    if (this.checked) {
+
+        permanentLine1.value = presentLine1.value;
+        permanentLine2.value = presentLine2.value;
+        permanentLine3.value = presentLine3.value;
+        permanentPin.value   = presentPin.value;
+
+        permanentState.innerHTML = presentState.innerHTML;
+        permanentState.value = presentState.value;
+
+        permanentDistrict.innerHTML = presentDistrict.innerHTML;
+        permanentDistrict.value = presentDistrict.value;
+
+        permanentPS.innerHTML = presentPS.innerHTML;
+        permanentPS.value = presentPS.value;
+
+    } else {
+
+        document.querySelectorAll('.address-permanent').forEach(function(field){
+            field.value = '';
+        });
+
+        permanentDistrict.innerHTML = '';
+        permanentPS.innerHTML = '';
+    }
+});
+
+function addDependentRow() {
+    const tableBody = document.querySelector('#dependentTable tbody');
+    const firstRow = tableBody.querySelector('tr');
+    const newRow = firstRow.cloneNode(true);
+
+    newRow.querySelectorAll('input, select').forEach(function (field) {
+        field.value = '';
+
+        if (field.tagName === 'SELECT') {
+            field.selectedIndex = 0;
+        }
+    });
+
+    tableBody.appendChild(newRow);
+}
+
+function removeDependentRow(button) {
+    const tableBody = document.querySelector('#dependentTable tbody');
+
+    if (tableBody.rows.length > 1) {
+        button.closest('tr').remove();
+    } else {
+        alert('At least one family member row is required.');
+    }
+}
+
+
+function previewEmployeeDetails() {
+    let form = document.querySelector('form');
+    let previewHTML = `
+        <html>
+        <head>
+            <title>Employee Details Preview</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <style>
+                body { padding: 25px; font-family: Arial, sans-serif; }
+                h3 { color: #4b25b7; }
+                table th { width: 30%; background: #f1edff; }
+            </style>
+        </head>
+        <body>
+            <h3>Employee Details Preview</h3>
+            <table class="table table-bordered">
+    `;
+
+    form.querySelectorAll('input, select, textarea').forEach(function(field) {
+        if (field.type === 'button' || field.type === 'submit' || field.type === 'reset' || field.type === 'file') return;
+
+        let label = field.closest('.col-md-3, .col-md-4, td')?.querySelector('label')?.innerText || field.name || field.id || 'Field';
+        let value = '';
+
+        if (field.tagName === 'SELECT') {
+            value = field.options[field.selectedIndex]?.text || '';
+        } else {
+            value = field.value || '';
+        }
+
+        if (value.trim() !== '') {
+            previewHTML += `
+                <tr>
+                    <th>${label}</th>
+                    <td>${value}</td>
+                </tr>
+            `;
+        }
+    });
+
+    previewHTML += `
+            </table>
+
+            <button onclick="window.close()" class="btn btn-secondary">
+                Back
+            </button>
+        </body>
+        </html>
+    `;
+
+    let previewWindow = window.open('', '_blank', 'width=1000,height=700,scrollbars=yes');
+    previewWindow.document.open();
+    previewWindow.document.write(previewHTML);
+    previewWindow.document.close();
+}
+
+
 </script>
+
