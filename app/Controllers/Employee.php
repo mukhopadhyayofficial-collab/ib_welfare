@@ -186,7 +186,6 @@ class Employee extends BaseController {
             // Only if you add this column later
             'user_photo_path' => $photoPath
         ];
-        
         //echo var_dump($data); die();
 		$UserModel = new UserModel();
         $user = $UserModel->where("email_id ",$this->request->getVar('email_id '))->first();
