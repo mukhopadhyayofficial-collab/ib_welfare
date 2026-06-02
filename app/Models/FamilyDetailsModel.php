@@ -6,16 +6,15 @@ class FamilyDetailsModel extends Model{
 	protected $allowedFields = [
 					'user_id',
 					'family_member_name',
-					'relationship',
+					'relationship_id',
 					'contact_number',
-					'dob',
-					'blood_group_id',
+					'family_dob',
+					'family_blood_group',
 					'dependency',
 					'status',
 					'created_at',
 					'created_by',
-					'updated_at',
-					'updated_by',
+					'updated_at'
 				];
 }
 

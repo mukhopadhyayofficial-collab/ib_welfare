@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: May 30, 2026 at 09:52 AM
+-- Generation Time: Jun 02, 2026 at 09:47 AM
 -- Server version: 8.4.3
 -- PHP Version: 8.3.16
 
@@ -79,8 +79,8 @@ INSERT INTO `gb_district` (`gb_district_id`, `state_id`, `gb_district_name`, `gb
 (40, 28, 'Uttar Dinajpur', '1'),
 (41, 28, 'Nadia', '2'),
 (46, 28, 'Paschim Bardhaman', '1'),
-(47, 28, 'ALL', '1'),
-(48, 28, 'Others', '1'),
+(47, 28, 'ALL', '2'),
+(48, 28, 'Others', '2'),
 (49, 28, 'Purba Bardhaman', '1');
 
 -- --------------------------------------------------------
@@ -842,7 +842,9 @@ INSERT INTO `master_relationship` (`id`, `relationship_name`, `status`) VALUES
 (9, 'Grandmother', 'Active'),
 (10, 'Father-in-law', 'Active'),
 (11, 'Mother-in-law', 'Active'),
-(12, 'Other', 'Active');
+(12, 'Other', 'Active'),
+(13, '', 'Active'),
+(14, '', 'Active');
 
 -- --------------------------------------------------------
 
@@ -930,6 +932,7 @@ CREATE TABLE `users` (
   `employee_id` varchar(50) NOT NULL,
   `designation_rank_id` int UNSIGNED DEFAULT NULL,
   `department_unit_id` int UNSIGNED DEFAULT NULL,
+  `liu_id` int DEFAULT NULL,
   `password` varchar(255) NOT NULL,
   `mobile_number` varchar(15) NOT NULL,
   `mobile_number_alternate` varchar(15) NOT NULL,
@@ -938,13 +941,16 @@ CREATE TABLE `users` (
   `dob` date DEFAULT NULL,
   `age` int UNSIGNED DEFAULT NULL,
   `gender` enum('Male','Female','Other') DEFAULT NULL,
-  `blood_group_id` varchar(15) DEFAULT NULL,
+  `blood_group` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `height` varchar(20) DEFAULT NULL,
   `weight` varchar(20) DEFAULT NULL,
   `joining_date` date DEFAULT NULL,
+  `service_status` varchar(150) DEFAULT NULL,
   `pay_allowance_basic_pay` decimal(10,2) DEFAULT NULL,
+  `user_photo_path` text,
   `known_ailment` text,
   `disability_allergy` text,
+  `action_taken` text NOT NULL,
   `present_address_line1` varchar(255) DEFAULT NULL,
   `present_address_line2` varchar(255) DEFAULT NULL,
   `present_address_line3` varchar(255) DEFAULT NULL,
@@ -960,15 +966,16 @@ CREATE TABLE `users` (
   `permanent_ps` int UNSIGNED DEFAULT NULL,
   `permanent_state_id` int UNSIGNED DEFAULT NULL,
   `permanent_pincode` varchar(10) DEFAULT NULL,
-  `status` enum('Active','Inactive') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Active'
+  `status` enum('Active','Inactive') CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT 'Active',
+  `is_password_change` enum('1','2') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `user_type`, `full_name`, `employee_id`, `designation_rank_id`, `department_unit_id`, `password`, `mobile_number`, `mobile_number_alternate`, `email_id`, `emergency_contact`, `dob`, `age`, `gender`, `blood_group_id`, `height`, `weight`, `joining_date`, `pay_allowance_basic_pay`, `known_ailment`, `disability_allergy`, `present_address_line1`, `present_address_line2`, `present_address_line3`, `present_district_id`, `present_ps`, `present_state_id`, `present_pincode`, `same_address`, `permanent_address_line1`, `permanent_address_line2`, `permanent_address_line3`, `permanent_district_id`, `permanent_ps`, `permanent_state_id`, `permanent_pincode`, `status`) VALUES
-(1, 'Admin', 'IB,WB', 'IBWB700071', 5, 1, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '1234567890', '', 'test@ibwb.gov.in', NULL, '2026-05-27', NULL, 'Male', 'A+', NULL, NULL, NULL, NULL, NULL, NULL, '13 Lord Sinha Road', 'Near Emami Market', NULL, 35, 365, NULL, '700071', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active');
+INSERT INTO `users` (`id`, `user_type`, `full_name`, `employee_id`, `designation_rank_id`, `department_unit_id`, `liu_id`, `password`, `mobile_number`, `mobile_number_alternate`, `email_id`, `emergency_contact`, `dob`, `age`, `gender`, `blood_group`, `height`, `weight`, `joining_date`, `service_status`, `pay_allowance_basic_pay`, `user_photo_path`, `known_ailment`, `disability_allergy`, `action_taken`, `present_address_line1`, `present_address_line2`, `present_address_line3`, `present_district_id`, `present_ps`, `present_state_id`, `present_pincode`, `same_address`, `permanent_address_line1`, `permanent_address_line2`, `permanent_address_line3`, `permanent_district_id`, `permanent_ps`, `permanent_state_id`, `permanent_pincode`, `status`, `is_password_change`) VALUES
+(1, 'Admin', 'IB,WB', 'IBWB700071', 5, 1, 0, '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', '1234567890', '123', 'test@ibwb.gov.in', NULL, '2026-05-27', NULL, 'Male', 'A+', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '13 Lord Sinha Road', 'Near Emami Market', NULL, 35, 365, NULL, '700071', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Active', '1');
 
 -- --------------------------------------------------------
 
@@ -980,10 +987,10 @@ CREATE TABLE `user_family_details` (
   `id` int UNSIGNED NOT NULL,
   `user_id` int UNSIGNED NOT NULL,
   `family_member_name` varchar(150) NOT NULL,
-  `relationship` varchar(50) NOT NULL,
+  `relationship_id` int NOT NULL,
   `contact_number` varchar(15) DEFAULT NULL,
-  `dob` date DEFAULT NULL,
-  `blood_group_id` varchar(15) DEFAULT NULL,
+  `family_dob` date DEFAULT NULL,
+  `family_blood_group` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
   `dependency` enum('Yes','No') NOT NULL DEFAULT 'Yes',
   `status` enum('Active','Inactive') NOT NULL DEFAULT 'Active',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP,
@@ -1143,7 +1150,7 @@ ALTER TABLE `master_liu`
 -- AUTO_INCREMENT for table `master_relationship`
 --
 ALTER TABLE `master_relationship`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `master_state`
@@ -1161,13 +1168,13 @@ ALTER TABLE `master_unit`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `user_family_details`
 --
 ALTER TABLE `user_family_details`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_medical_history`
