@@ -9,6 +9,7 @@ use App\Models\RelationshipModel;
 use App\Models\StateModel;
 use App\Models\DistrictModel;
 use App\Models\PoliceStationModel;
+use App\Models\FamilyDetailsModel;
 
 class Employee extends BaseController {
     private function uid(): int
@@ -94,20 +95,144 @@ class Employee extends BaseController {
     }
     public function insertEmployee(){
         $session = session();
-        $data =  [
-			'full_name' =>$this->request->getVar('full_name'),
-            'email' =>$this->request->getVar('email'),
-            'password' =>$this->request->getVar('password'),
-            'user_type' =>$this->request->getVar('user_type'),
-		];
+        //echo "1"; die;
+
+        // Upload Photo
+        $userId="";
+        $employeeId = trim($this->request->getPost('employee_id'));
+        $photoName = null;
+        $photoPath = null;
+        $photo = $this->request->getFile('user_photo_path');
+
+        if ($photo && $photo->isValid() && !$photo->hasMoved()) {
+            $uploadPath = FCPATH . 'uploads/employees/' . $employeeId;
+
+            // Create folder if not exists
+            if (!is_dir($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
+            }
+            //echo ''. $uploadPath .'';die();
+            // Get extension
+            $extension = $photo->getExtension();
+
+            // Fixed file name
+            $photoName = 'user_profile_photo.' . $extension;
+
+            // Move file
+            $photo->move($uploadPath, $photoName);
+
+            // Store relative path in database
+            $photoPath = 'uploads/employees/' . $employeeId . '/' . $photoName;
+        }
+
+        $sameAddress = $this->request->getPost('same_address') ? '1' : '2';
+
+        $data = [
+
+            'user_type'               => 'User',
+            'full_name'               => $this->request->getPost('full_name'),
+            'employee_id'             => $employeeId,
+            'password'                => "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi",
+
+            'designation_rank_id'     => $this->request->getPost('designation_rank_id'),
+            'department_unit_id'      => $this->request->getPost('department_unit_id'),
+            'liu_id'                  => $this->request->getPost('liu_id'),
+
+            'mobile_number'           => $this->request->getPost('mobile_number'),
+            'mobile_number_alternate' => $this->request->getPost('mobile_number_alternate'),
+            'email_id'                => $this->request->getPost('email_id'),
+            'emergency_contact'       => $this->request->getPost('emergency_contact'),
+
+            'dob'                     => $this->request->getPost('dob'),
+            'age'                     => $this->request->getPost('age'),
+            'gender'                  => $this->request->getPost('gender'),
+
+            'blood_group'          => $this->request->getPost('blood_group'),
+            'height'                  => $this->request->getPost('height'),
+            'weight'                  => $this->request->getPost('weight'),
+
+            'joining_date'            => $this->request->getPost('joining_date'),
+
+            'pay_allowance_basic_pay' => $this->request->getPost('pay_allowance_basic_pay'),
+
+            'known_ailment'           => $this->request->getPost('known_ailment'),
+            'disability_allergy'      => $this->request->getPost('disability_allergy'),
+
+            // Present Address
+            'present_address_line1'   => $this->request->getPost('present_address_line1'),
+            'present_address_line2'   => $this->request->getPost('present_address_line2'),
+            'present_address_line3'   => $this->request->getPost('present_address_line3'),
+
+            'present_district_id'     => $this->request->getPost('present_district_id'),
+            'present_ps'              => $this->request->getPost('present_ps'),
+            'present_state_id'        => $this->request->getPost('present_state_id'),
+            'present_pincode'         => $this->request->getPost('present_pincode'),
+
+            // Permanent Address
+            'same_address'            => $sameAddress,
+
+            'permanent_address_line1' => $this->request->getPost('permanent_address_line1'),
+            'permanent_address_line2' => $this->request->getPost('permanent_address_line2'),
+            'permanent_address_line3' => $this->request->getPost('permanent_address_line3'),
+
+            'permanent_district_id'   => $this->request->getPost('permanent_district_id'),
+            'permanent_ps'            => $this->request->getPost('permanent_ps'),
+            'permanent_state_id'      => $this->request->getPost('permanent_state_id'),
+            'permanent_pincode'       => $this->request->getPost('permanent_pincode'),
+
+            'status'                  => 'Active',
+            'is_password_change'                  => '2',
+
+            // Only if you add this column later
+            'user_photo_path' => $photoPath
+        ];
+        //echo var_dump($data); die();
 		$UserModel = new UserModel();
-        $user = $UserModel->where("email",$this->request->getVar('email'))->first();
+        $user = $UserModel->where("email_id ",$this->request->getVar('email_id '))->first();
+
+
         if(@$user){
             $session->setFlashdata("errorMsg","Employee Already Exists..");
         } else{
-            $UserModel->insert($data);
+            $UserModel->insert($data);  
+            //echo $UserModel->db->getLastQuery();die;          
+            $userId = $UserModel->getInsertID();
+
+            $FamilyDetailsModel = new FamilyDetailsModel();
+
+            $familyNames   = $this->request->getPost('family_member_name');
+            $relationships = $this->request->getPost('relationship_id');
+            $familyDobs    = $this->request->getPost('family_dob');
+            $mobiles       = $this->request->getPost('contact_number');
+            $bloodGroups   = $this->request->getPost('family_blood_group');
+
+            if (!empty($familyNames)) {
+
+                foreach ($familyNames as $key => $name) {
+
+                    if (trim($name) == '') {
+                        continue;
+                    }
+
+                    $familyData = [
+                        'user_id'            => $userId,
+                        'family_member_name' => $name,
+                        'relationship_id'    => $relationships[$key] ?? null,
+                        'family_dob'         => $familyDobs[$key] ?? null,
+                        'contact_number'     => $mobiles[$key] ?? null,
+                        'family_blood_group' => $bloodGroups[$key] ?? null,
+                        'status'             => 'Active'
+                    ];
+
+                    $FamilyDetailsModel->insert($familyData);
+                    //echo $FamilyDetailsModel->db->getLastQuery();die;        
+                }
+            }
+
+
             $session->setFlashdata("successMsg","Employee Successfully Added..");
         }
+
         return redirect()->to(base_url('add-employee'));
     }
     public function deleteEmployee($id = null){
