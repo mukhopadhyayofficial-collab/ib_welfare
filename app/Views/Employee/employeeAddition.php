@@ -411,19 +411,22 @@
                             Follow-up</label><textarea class="form-control" rows="3"></textarea></div>
                 </div>
                 <div class="mt-4">
+                
                     <button type="button" class="btn btn-info rounded-pill px-4" onclick="previewEmployeeDetails()">
                         <i class="bi bi-eye"></i> Preview
                     </button>
-
+                    
                     <button type="submit" class="btn quick-btn bg-purple requires-super">
-                        <i class="bi bi-save"></i> Save Employee Details
+                        <i class="bi bi-save"></i> Submit
                     </button>
-
+                    
                     <button type="reset" class="btn reset-fancy rounded-pill px-4">
                         <i class="bi bi-arrow-counterclockwise"></i> Reset
                     </button>
+                  
                 </div>
             </form>
+
         </div>
     </div>
 </main>
