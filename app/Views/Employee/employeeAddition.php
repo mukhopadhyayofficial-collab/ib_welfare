@@ -1,4 +1,7 @@
-<?php if(session()->getFlashdata('successMsg')): ?>
+<?php 
+    $required = ''; //$isRequired ? 'required' : '';
+    if(session()->getFlashdata('successMsg')): 
+?>
 <script>
     localStorage.removeItem('employeeFormData');
 </script>
@@ -32,15 +35,15 @@
                 <div class="row g-3 mb-4">
                     <div class="col-md-3">
                         <label class="form-label required">Employee ID </label>
-                        <input class="form-control" name="employee_id" placeholder="EMP001">
+                        <input class="form-control" name="employee_id" placeholder="EMP001" <?= $required ?>>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label required">Full Name</label>
-                        <input type="text" class="form-control" name="full_name" placeholder="Name of personnel">
+                        <input type="text" class="form-control" name="full_name" placeholder="Name of personnel" <?= $required ?>>
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">Rank / Designation</label>
-                        <select class="form-select" name="designation_rank_id">
+                        <label class="form-label <?= $required ?>" >Rank / Designation</label>
+                        <select class="form-select" name="designation_rank_id" <?= $required ?>>
                             <option value="">Select Rank</option>
                             <?php foreach ($rankDetails as $rank) { ?>
 
@@ -52,8 +55,8 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">Unit </label>
-                        <select class="form-select" id="unitSelect" name="department_unit_id">
+                        <label class="form-label <?= $required ?>">Unit </label>
+                        <select class="form-select" id="unitSelect" name="department_unit_id" <?= $required ?>>
                             <option value="">Select Unit</option>
                             <?php foreach ($unitDetails as $unit) { ?>
 
@@ -65,8 +68,8 @@
                         </select>
                     </div>
                     <div class="col-md-3 d-none" id="liuUnitBox">
-                        <label class="form-label required">Select LIU</label>
-                        <select class="form-select" name="liu_id">
+                        <label class="form-label <?= $required ?>">Select LIU</label>
+                        <select class="form-select" name="liu_id" <?= $required ?>>
                             <option value="">Select LIU of IB</option>
                             <?php foreach ($liuDetails as $item) { ?>
 
@@ -86,16 +89,16 @@
                         </select>
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">Date of Birth</label>
-                        <input type="date" id="dob" class="form-control" name="dob">
+                        <label class="form-label <?= $required ?>">Date of Birth</label>
+                        <input type="date" id="dob" class="form-control" name="dob" <?= $required ?>>
                     </div>
                     <div class="col-md-3">
                         <label class="form-label">Age</label>
                         <input id="age" class="form-control" name="age" readonly>
                     </div>
                     <div class="col-md-3">
-                        <label class="form-label">Date of Joining</label>
-                        <input type="date" class="form-control" name="joining_date">
+                        <label class="form-label <?= $required ?>">Date of Joining</label>
+                        <input type="date" class="form-control" <?= $required ?> name="joining_date">
                     </div>
                     <div class="col-md-3">
                         <label class="form-label">Service Status</label>
@@ -127,8 +130,8 @@
                             class="form-control" type="number" max="10" placeholder="10 digit mobile"></div>-->
 
                     <div class="col-md-3">
-                        <label class="form-label required">Mobile Number</label>
-                        <input type="tel" name="mobile_number" class="form-control" placeholder="Enter 10-digit mobile number"
+                        <label class="form-label <?= $required ?>">Mobile Number</label>
+                        <input type="tel" name="mobile_number" <?= $required ?> class="form-control" placeholder="Enter 10-digit mobile number"
                             maxlength="10" pattern="[6-9][0-9]{9}" 
                             oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
                     </div>
@@ -164,21 +167,21 @@
 
                     <!-- PRESENT ADDRESS -->
                     <div class="col-md-3">
-                        <label class="form-label required">Address Line1/ Village</label>
-                        <input id="presentLine1" name="present_address_line1" class="form-control address-present">
+                        <label class="form-label <?= $required ?>">Address Line1/ Village</label>
+                        <input id="presentLine1" <?= $required ?> name="present_address_line1" class="form-control address-present">
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label required">Address Line2/ Post Office</label>
-                        <input id="presentLine2" name="present_address_line2" class="form-control address-present">
+                        <label class="form-label <?= $required ?>">Address Line2/ Post Office</label>
+                        <input id="presentLine2" <?= $required ?> name="present_address_line2" class="form-control address-present">
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label required">Address Line3/ City/Town</label>
-                        <input id="presentLine3" name="present_address_line3" class="form-control address-present">
+                        <label class="form-label <?= $required ?>">Address Line3/ City/Town</label>
+                        <input id="presentLine3" <?= $required ?> name="present_address_line3" class="form-control address-present">
                     </div>
 
-                    <div class="col-md-3"><label class="form-label required">State</label><select id="presentState" name="present_state_id" class="form-select address-present">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">State</label><select id="presentState" name="present_state_id" <?= $required ?> class="form-select address-present">
                             <option value="">Select State</option>
                             <?php foreach ($stateDetails as $item) { ?>
 
@@ -192,18 +195,17 @@
                     </div>
 
 
-                    <div class="col-md-3"><label class="form-label required">District</label>
-                        <select id="presentDistrict" class="form-select address-present" name="present_district_id">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">District</label>
+                        <select id="presentDistrict"  <?= $required ?> class="form-select address-present" name="present_district_id">
                         </select></div>
 
-                    <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="presentPS" class="form-select address-present" name="present_ps">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">Police Station</label><select id="presentPS" class="form-select address-present" name="present_ps" <?= $required ?>>
                         </select></div>
 
-                    <div class="col-md-3"><label class="form-label required">PIN Code</label>
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">PIN Code</label>
                         <input type="text" id="presentPin" name="present_pincode" class="form-control address-present"
                             placeholder="PIN Code" maxlength="6" pattern="[0-9]{6}" 
-                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)">
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6) <?= $required ?>">
                     </div>
 
                     <!---<div class="col-9 mt-2">
@@ -246,21 +248,21 @@
 
 
                     <div class="col-md-3">
-                        <label class="form-label required">Address Line1/ Village</label>
-                        <input id="permanentLine1" name="permanent_address_line1" class="form-control address-permanent">
+                        <label class="form-label <?= $required ?>">Address Line1/ Village</label>
+                        <input id="permanentLine1" <?= $required ?> name="permanent_address_line1" class="form-control address-permanent">
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label required">Address Line2/ Post Office</label>
-                        <input id="permanentLine2" name="permanent_address_line2" class="form-control address-permanent">
+                        <label class="form-label <?= $required ?>">Address Line2/ Post Office</label>
+                        <input id="permanentLine2" <?= $required ?> name="permanent_address_line2" class="form-control address-permanent">
                     </div>
 
                     <div class="col-md-3">
-                        <label class="form-label required">Address Line3/ City/Town</label>
-                        <input id="permanentLine3" name="permanent_address_line3" class="form-control address-permanent">
+                        <label class="form-label <?= $required ?>">Address Line3/ City/Town</label>
+                        <input id="permanentLine3" <?= $required ?> name="permanent_address_line3" class="form-control address-permanent">
                     </div>
 
-                    <div class="col-md-3"><label class="form-label required">State</label><select id="permanentState" class="form-select address-permanent" name="permanent_state_id">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">State</label><select id="permanentState" <?= $required ?> class="form-select address-permanent" name="permanent_state_id">
                             <option value="">Select State</option>
                             <?php foreach ($stateDetails as $item) { ?>
 
@@ -273,16 +275,16 @@
                         </select>
                     </div>
 
-                    <div class="col-md-3"><label class="form-label required">District</label><select
-                            id="permanentDistrict" class="form-select address-permanent" name="permanent_district_id">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">District</label><select
+                            id="permanentDistrict" <?= $required ?> class="form-select address-permanent" name="permanent_district_id">
                         </select></div>
 
-                    <div class="col-md-3"><label class="form-label required">Police Station</label><select
-                            id="permanentPS" class="form-select address-permanent" name="permanent_ps">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">Police Station</label><select
+                            id="permanentPS" <?= $required ?> class="form-select address-permanent" name="permanent_ps">
                         </select></div>
                     <div class="col-md-3">
-                        <label class="form-label required">PIN Code</label>
-                        <input type="text" id="permanentPin" name="permanent_pincode" class="form-control address-permanent"
+                        <label class="form-label <?= $required ?>">PIN Code</label>
+                        <input type="text" <?= $required ?> id="permanentPin" name="permanent_pincode" class="form-control address-permanent"
                             placeholder="PIN Code" maxlength="6" pattern="[0-9]{6}" 
                             oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,6)">
                     </div>
@@ -290,7 +292,8 @@
 
                 <div class="section-title"><i class="bi bi-heart-pulse"></i> Basic Health Profile</div>
                 <div class="row g-3 mb-4">
-                    <div class="col-md-3"><label class="form-label">Blood Group</label><select class="form-select" name="blood_group">
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">Blood Group</label>
+                        <select class="form-select" name="blood_group" <?= $required ?>>
                             <option value="0">Select</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -303,13 +306,13 @@
                         </select></div>
 
                     <div class="col-md-3">
-                        <label class="form-label">Height (cm)</label>
-                        <input id="heightCm" type="text" name="height" class="form-control" placeholder="e.g. 170" maxlength="3"
-                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,3)">
+                        <label class="form-label <?= $required ?>">Height (cm)</label>
+                        <input  id="heightCm" type="text" name="height" class="form-control" placeholder="e.g. 170" maxlength="3"
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,3)" <?= $required ?>>
                     </div>
-                    <div class="col-md-3"><label class="form-label">Weight (kg)</label>
+                    <div class="col-md-3"><label class="form-label <?= $required ?>">Weight (kg)</label>
                         <input id="weightKg" type="text" class="form-control" name="weight" placeholder="e.g. 70" maxlength="3"
-                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,3)">
+                            oninput="this.value=this.value.replace(/[^0-9]/g,'').slice(0,3)" <?= $required ?>>
                     </div>
                 </div>
 

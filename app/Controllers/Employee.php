@@ -152,6 +152,7 @@ class Employee extends BaseController {
             'weight'                  => $this->request->getPost('weight'),
 
             'joining_date'            => $this->request->getPost('joining_date'),
+            'service_status'          => $this->request->getPost('service_status'),
 
             'pay_allowance_basic_pay' => $this->request->getPost('pay_allowance_basic_pay'),
 
