@@ -384,9 +384,9 @@
 
                 <div class="section-title"><i class="bi bi-journal-medical"></i> Remarks</div>
                 <div class="row g-3">
-                    <div class="col-md-4"><label class="form-label">Known Ailment</label><textarea class="form-control" name="known_ailment"
-                            rows="3" style="text-align:left;">
-                        </textarea></div>
+                    <div class="col-md-4"><label class="form-label">Known Ailment</label>
+                    <textarea class="form-control" name="known_ailment"
+                            rows="3"></textarea></div>
                     <div class="col-md-4"><label class="form-label">Any Disability / Allergy</label><textarea
                             class="form-control" rows="3" name="disability_allergy"></textarea></div>
 
