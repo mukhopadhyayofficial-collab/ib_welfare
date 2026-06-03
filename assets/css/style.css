@@ -416,5 +416,6 @@ body{
     color:#fff;
     padding:34px;
 }
+
 .action-btn-group{display:flex;justify-content:center;gap:6px;flex-wrap:nowrap}
 .action-btn-group .btn{min-width:76px;height:34px;border-radius:999px;font-size:.84rem;font-weight:700;display:inline-flex;align-items:center;justify-content:center;gap:4px;padding:6px 10px}

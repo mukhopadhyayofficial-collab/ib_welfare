@@ -46,5 +46,10 @@
             <i class="bi bi-bar-chart"></i>
             <span>Reports</span>
         </a>
+
+        <a href="<?= base_url('logout'); ?>" class="sidebar-link">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Logout</span>
+        </a>
     </nav>
 </aside>
