@@ -378,7 +378,7 @@
                 <div class="section-title"><i class="bi bi-journal-medical"></i> Remarks</div>
                 <div class="row g-3">
                     <div class="col-md-4"><label class="form-label">Known Ailment</label><textarea class="form-control" name="known_ailment"
-                            rows="3">
+                            rows="3" style="text-align:left;">
                         </textarea></div>
                     <div class="col-md-4"><label class="form-label">Any Disability / Allergy</label><textarea
                             class="form-control" rows="3" name="disability_allergy"></textarea></div>
@@ -387,10 +387,15 @@
                             Follow-up</label><textarea class="form-control" rows="3" name="action_taken"></textarea></div>
                 </div>
                 <div class="mt-4">
-                
-                    <button type="button" class="btn btn-info rounded-pill px-4" onclick="previewEmployeeDetails()">
+
+                                      
+                    <button type="button" class="btn btn-info rounded-pill px-4" onclick="openPreview()">
                         <i class="bi bi-eye"></i> Preview
                     </button>
+           
+                    <!--<button type="button" class="btn btn-info rounded-pill px-4" onclick="previewEmployeeDetails()">
+                        <i class="bi bi-eye"></i> Preview
+                    </button>-->
                     
                     <button type="submit" class="btn quick-btn bg-purple requires-super">
                         <i class="bi bi-save"></i> Submit
@@ -597,8 +602,8 @@
         }
     }
 
-
-    function previewEmployeeDetails() {
+    
+    /*function previewEmployeeDetails() {
         let form = document.querySelector('form');
         let previewHTML = `
         <html>
@@ -652,7 +657,101 @@
         previewWindow.document.open();
         previewWindow.document.write(previewHTML);
         previewWindow.document.close();
-    }
+    }*/
+
+    
+    function openPreview() {
+    const original = document.querySelector('.card.card-glass');
+    const clone = original.cloneNode(true);
+
+    const originalFields = original.querySelectorAll('input, select, textarea');
+    const cloneFields = clone.querySelectorAll('input, select, textarea');
+
+    originalFields.forEach(function (field, index) {
+        const cloneField = cloneFields[index];
+
+        if (!cloneField) return;
+
+        if (field.type === 'file') {
+            cloneField.closest('.col-md-3')?.remove();
+            return;
+        }
+
+        if (field.tagName === 'SELECT') {
+            cloneField.value = field.value;
+        } else if (field.type === 'checkbox' || field.type === 'radio') {
+            cloneField.checked = field.checked;
+        } else {
+            cloneField.setAttribute('value', field.value);
+            cloneField.value = field.value;
+        }
+
+        cloneField.setAttribute('readonly', true);
+        cloneField.setAttribute('disabled', true);
+    });
+
+    clone.querySelectorAll('button').forEach(btn => btn.remove());
+
+    const previewWindow = window.open('', '_blank', 'width=1400,height=900,scrollbars=yes');
+
+    previewWindow.document.open();
+    previewWindow.document.write(`
+        <html>
+        <head>
+            <title>Employee Details Preview</title>
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+            <style>
+                body {
+                    background: linear-gradient(120deg,#f8f5ff,#eefaff);
+                    padding: 30px;
+                    font-family: Arial, sans-serif;
+                }
+                .card-glass {
+                    background: #fff;
+                    border-radius: 24px;
+                    padding: 20px;
+                    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+                }
+                .section-title {
+                    background: linear-gradient(90deg,#eee7ff,#eaf8ff);
+                    border: 1px solid #cfc4ff;
+                    border-radius: 12px;
+                    padding: 10px 14px;
+                    font-weight: 700;
+                    color: #3f1ca2;
+                    margin-bottom: 15px;
+                }
+                .address-band {
+                    border: 1px solid #d8ccff;
+                    border-radius: 14px;
+                    padding: 10px 16px;
+                    font-weight: 700;
+                    background: #faf8ff;
+                }
+                input, select, textarea {
+                    background-color: #f8f9fa !important;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="mb-3">
+                <button onclick="window.close()" class="btn btn-secondary rounded-pill">
+                    <i class="bi bi-arrow-left"></i> Back
+                </button>
+                <button onclick="window.print()" class="btn btn-primary rounded-pill">
+                    <i class="bi bi-printer"></i> Print
+                </button>
+            </div>
+
+            ${clone.outerHTML}
+        </body>
+        </html>
+    `);
+
+    previewWindow.document.close();
+};
+
 
 
 </script>
