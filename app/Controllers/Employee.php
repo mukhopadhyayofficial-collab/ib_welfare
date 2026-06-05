@@ -243,6 +243,40 @@ class Employee extends BaseController {
         $session->setFlashdata("successMsg","Employee Successfully Deleted..");
 		return redirect()->to(base_url('employee-management'));
 	}
+    public function checkEmployee(){
+        $session = session();
+		$field = $this->request->getGet('field');
+        $value = trim($this->request->getGet('value'));
+
+        $allowedFields = [
+            'employee_id',
+            'email_id',
+            'mobile_number',
+            'mobile_number_alternate'
+        ];
+
+        if (!in_array($field, $allowedFields)) {
+            return $this->response->setJSON([
+                'exists' => false
+            ]);
+        }
+
+        $UserModel = new UserModel();
+
+        $exists = $UserModel
+            ->where($field, $value)
+            ->countAllResults();
+        if ($exists > 0) {
+            return $this->response->setJSON([
+                'exists' => ($exists > 0),
+                'message' => ucfirst(str_replace('_', ' ', $field)) . ' already exists'
+            ]);
+        } else {
+            return $this->response->setJSON([   
+                'exists' => ($exists > 0),
+            ]);
+	    }
+    }
     public function statusChangeEmployee($id = null){
         $session = session();
 		$UserModel = new UserModel();
