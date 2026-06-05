@@ -26,16 +26,17 @@
             <h5 class="mb-4"><i class="bi bi-person-vcard text-primary"></i> Add / Update Employee Details</h5>
             
             <form id="employeeForm" method="post" action="<?= base_url('insert-employee'); ?>" enctype="multipart/form-data">
-
-                 <?= csrf_field() ?>
-                 
+                
+                <?= csrf_field(); ?>
+                
                 <div class="section-title"><i class="bi bi-person-badge"></i>
                     Service & Personal Details
                 </div>
                 <div class="row g-3 mb-4">
                     <div class="col-md-3">
                         <label class="form-label required">Employee ID </label>
-                        <input class="form-control" name="employee_id" placeholder="EMP001" <?= $required ?>>
+                        <input class="form-control duplicate-check" name="employee_id" id="employee_id" placeholder="EMP001" <?= $required ?>>
+                        <small id="employee_id_Msg">Test</small>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label required">Full Name</label>
@@ -131,18 +132,21 @@
 
                     <div class="col-md-3">
                         <label class="form-label <?= $required ?>">Mobile Number</label>
-                        <input type="tel" name="mobile_number" <?= $required ?> class="form-control" placeholder="Enter 10-digit mobile number"
+                        <input type="tel" name="mobile_number" <?= $required ?> class="form-control duplicate-check" placeholder="Enter 10-digit mobile number"
                             maxlength="10" pattern="[6-9][0-9]{9}" 
                             oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+                        <small id="mobile_number_Msg"></small>
                     </div>
                     <div class="col-md-3"><label class="form-label">Alternate Mobile</label>
-                        <input type="tel" name="mobile_number_alternate" class="form-control" placeholder="Enter 10-digit mobile number"
+                        <input type="tel" name="mobile_number_alternate" class="form-control duplicate-check" placeholder="Enter 10-digit mobile number"
                             maxlength="10" pattern="[6-9][0-9]{9}" 
                             oninput="this.value=this.value.replace(/\D/g,'').slice(0,10)">
+                        <small id="mobile_number_alternate_Msg"></small>
                     </div>
                     <div class="col-md-3"><label class="form-label">Email</label>
-                        <input type="email" name="email_id" class="form-control" placeholder="Enter Email ID"
+                        <input type="email" name="email_id" class="form-control duplicate-check" placeholder="Enter Email ID"
                             maxlength="100" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" >
+                        <small id="email_id_Msg"></small>
                     </div>
                     <div class="col-md-3"><label class="form-label">Emergency Contact No.</label>
                         <input type="tel" name="emergency_contact" class="form-control" placeholder="Enter 10-digit mobile number"
@@ -407,7 +411,7 @@
                         <i class="bi bi-eye"></i> Preview
                     </button>-->
                     
-                    <button type="submit" class="btn quick-btn bg-purple requires-super">
+                    <button type="submit" class="btn quick-btn bg-purple requires-super"  id="submitBtn">
                         <i class="bi bi-save"></i> Submit
                     </button>
                     
@@ -765,28 +769,28 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
-    const form = document.getElementById("employeeForm");
+        const form = document.getElementById("employeeForm");
 
-    // Restore saved data
-    const savedData = localStorage.getItem("employeeFormData");
+        // Restore saved data
+        const savedData = localStorage.getItem("employeeFormData");
 
-    if (savedData) {
-        const data = JSON.parse(savedData);
+        if (savedData) {
+            const data = JSON.parse(savedData);
 
-        Object.keys(data).forEach(function(name) {
-            const field = form.querySelector(`[name="${name}"]`);
+            Object.keys(data).forEach(function(name) {
+                const field = form.querySelector(`[name="${name}"]`);
 
-            if (field) {
+                if (field) {
 
-                if (field.type === "checkbox") {
-                    field.checked = data[name];
+                    if (field.type === "checkbox") {
+                        field.checked = data[name];
+                    }
+                    else {
+                        field.value = data[name];
+                    }
                 }
-                else {
-                    field.value = data[name];
-                }
-            }
-        });
-    }
+            });
+        }
 
     // Auto save on change
     form.addEventListener("input", function() {
@@ -796,6 +800,8 @@
         form.querySelectorAll("input, select, textarea").forEach(function(field) {
 
             if (!field.name) return;
+            // Skip CSRF token
+            if (field.name === 'csrf_test_name') return;
 
             if (field.type === "file") return;
 
@@ -810,6 +816,57 @@
             "employeeFormData",
             JSON.stringify(data)
         );
+    });
+
+
+    $('.duplicate-check').on('blur', function () {
+
+        let field = $(this).attr('name');
+        let value = $(this).val();
+
+        if(value == '') return;
+
+        $.ajax({
+            url: "<?= base_url('check-employee') ?>",
+            type: "GET",
+            dataType: "json",
+            data: {
+                field: field,
+                value: value,
+                '<?= csrf_token() ?>': $('input[name="<?= csrf_token() ?>"]').val()
+            },
+            success: function(res){
+                //alert(field);
+                let msgBox = $("#" + field + "_Msg");
+                //alert(msgBox);
+                if(res.exists){
+                    //alert('Y');
+                    msgBox
+                        .html(res.message)
+                        .removeClass('text-success')
+                        .addClass('text-danger');
+
+                    $('[name="'+field+'"]').addClass('is-invalid');
+
+                    $('#submitBtn').prop('disabled', true);
+
+                }else{
+                    //alert('N');
+                    msgBox
+                        .html('')
+                        .removeClass('text-danger')
+                        .addClass('text-success');
+
+                    $('[name="'+field+'"]').removeClass('is-invalid');
+
+                    // Check whether any invalid field remains
+                    if ($('.is-invalid').length === 0) {
+                        $('#submitBtn').prop('disabled', false);
+                    }
+                }
+            }
+        });
+
     });
 
 });
