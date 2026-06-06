@@ -17,9 +17,13 @@ $routes->post('/valid-user-check', 'Home::checkValidUser');
 $routes->get('/logout', 'Home::logout');
 $routes->get('/', 'Home::dashboard');
 
-$routes->get('/employee-management', 'Employee::employeeManagement');
+//for admin get all the employee
+$routes->get('/employee-management', 'Employee::getEmployeeList');
+//$routes->get('/employee-management', 'Employee::employeeManagement');
 
 $routes->get('/add-employee', 'Employee::addEmployee');
+//$routes->get('/get-employee-list', 'Employee::getEmployeeList');
+
 $routes->get('getDistricts/(:num)', 'Employee::getDistricts/$1');
 $routes->get('getPoliceStation/(:num)', 'Employee::getPoliceStation/$1');
 

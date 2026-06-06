@@ -61,6 +61,97 @@
                                 </tr>
                             </thead>
                             <tbody>
+
+                                <?php if(!empty($employeeList)) : ?>
+
+                                    <?php foreach($employeeList as $row) : ?>
+
+                                        <tr>
+
+                                            <td><?= esc($row['employee_id']) ?></td>
+
+                                            <td><?= esc($row['full_name']) ?></td>
+
+                                            <td><?= esc($row['rank_name'] ?? '') ?></td>
+
+                                            <td><?= esc($row['unit_name'] ?? '') ?></td>
+
+                                            <td><?= esc($row['mobile_number']) ?></td>
+
+                                            <td><?= esc($row['age']) ?></td>
+
+                                            <td><?= esc($row['blood_group']) ?></td>
+
+                                            <td>
+                                                <?= !empty($row['height']) ? esc($row['height']).' cm' : '' ?>
+                                            </td>
+
+                                            <td>
+                                                <?= !empty($row['weight']) ? esc($row['weight']).' kg' : '' ?>
+                                            </td>
+
+                                            <td>
+
+                                                <?php
+                                                    $serviceStatus = $row['service_status'] ?? 'Active';
+
+                                                    $badgeClass = 'bg-success';
+
+                                                    if($serviceStatus == 'Transferred'){
+                                                        $badgeClass = 'bg-secondary';
+                                                    }
+                                                    elseif($serviceStatus == 'Retired'){
+                                                        $badgeClass = 'bg-dark';
+                                                    }
+                                                    elseif($serviceStatus == 'On Leave'){
+                                                        $badgeClass = 'bg-warning text-dark';
+                                                    }
+                                                ?>
+
+                                                <span class="badge <?= $badgeClass ?> badge-soft">
+                                                    <?= esc($serviceStatus) ?>
+                                                </span>
+
+                                            </td>
+
+                                            <td>
+                                                <div class="action-btn-group">
+
+                                                    <a href="<?= base_url('employee/view/'.$row['id']) ?>"
+                                                    class="btn btn-sm btn-outline-info">
+                                                        <i class="bi bi-eye"></i> View
+                                                    </a>
+
+                                                    <a href="<?= base_url('employee/edit/'.$row['id']) ?>"
+                                                    class="btn btn-sm btn-outline-warning requires-super">
+                                                        <i class="bi bi-pencil-square"></i> Edit
+                                                    </a>
+
+                                                    <a href="<?= base_url('employee/delete/'.$row['id']) ?>"
+                                                    onclick="return confirm('Are you sure you want to delete this employee?')"
+                                                    class="btn btn-sm btn-outline-danger requires-super">
+                                                        <i class="bi bi-trash"></i> Delete
+                                                    </a>
+
+                                                </div>
+                                            </td>
+
+                                        </tr>
+
+                                    <?php endforeach; ?>
+
+                                <?php else : ?>
+
+                                    <tr>
+                                        <td colspan="11" class="text-center text-muted">
+                                            No employee records found
+                                        </td>
+                                    </tr>
+
+                                <?php endif; ?>
+
+                            </tbody>
+                            <!-- <tbody>
                                 <tr>
                                     <td>EMP001</td>
                                     <td>Rahul Sen</td>
@@ -139,7 +230,7 @@
                                         </div>
                                     </td>
                                 </tr>
-                            </tbody>
+                            </tbody> -->
                         </table>
                     </div>
                     <div
