@@ -319,7 +319,7 @@ class Employee extends BaseController {
         $this->session->setFlashdata("successMsg","Employee Successfully Updated..");
         return redirect()->to(base_url('edit-employee/'.$id));
     }
-    public function medicalDetails(){ 
+    /*public function medicalDetails(){ 
         if ($r = $this->requireLogin()) return $r;
         $uid        = $this->uid();
     	$userDetails  = $this->userDetails($uid);
@@ -329,7 +329,35 @@ class Employee extends BaseController {
             'userDetails'  => $userDetails,
         ];
         return view('_header', $data) . view('Employee/medicalDetails', $data);
+    }*/
+
+    public function medicalDetails($id = null)
+    {
+        if ($r = $this->requireLogin()) return $r;
+
+        $uid = $this->uid();
+        $userDetails = $this->userDetails($uid);
+
+        $employee = $this->getUserById((int)$id);
+
+        if (!$employee) {
+            return redirect()->to(base_url('employee-management'))
+                ->with('errorMsg', 'Employee not found.');
+        }
+
+        $data = [
+            'title'       => 'Medical Details',
+            'active_menu' => 'employee-management',
+            'userDetails' => $userDetails,
+            'employee'    => $employee,
+        ];
+
+        return view('_header', $data) . view('Employee/medicalDetails', $data);
     }
+
+    
+
+
     public function searchEmployee(){ 
         if ($r = $this->requireLogin()) return $r;
         $uid        = $this->uid();

@@ -127,13 +127,11 @@
                                     <td>
                                         <div class="action-btn-group">
                                             <button class="btn btn-sm btn-outline-info">
-                                                <i class="bi bi-eye"></i> View</button
-                                            ><button class="btn btn-sm btn-outline-warning requires-super">
-                                                <i class="bi bi-pencil-square"></i> Edit</button
-                                            ><button
-                                                onclick="return confirmDelete()"
-                                                class="btn btn-sm btn-outline-danger requires-super"
-                                            >
+                                                <i class="bi bi-eye"></i> View</button>
+                                            <button class="btn btn-sm btn-outline-warning requires-super">
+                                                <i class="bi bi-pencil-square"></i> Edit</button>
+                                            <button onclick="return confirmDelete()" 
+                                            class="btn btn-sm btn-outline-danger requires-super">
                                                 <i class="bi bi-trash"></i> Delete
                                             </button>
                                         </div>
