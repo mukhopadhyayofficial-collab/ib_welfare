@@ -36,7 +36,7 @@
                     <div class="col-md-3">
                         <label class="form-label required">Employee ID </label>
                         <input class="form-control duplicate-check" name="employee_id" id="employee_id" placeholder="EMP001" <?= $required ?>>
-                        <small id="employee_id_Msg">Test</small>
+                        <small id="employee_id_Msg"></small>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label required">Full Name</label>
@@ -428,6 +428,30 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/js/main.js"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<?php if(session()->getFlashdata('successMsg')): ?>
+<script>
+Swal.fire({
+    icon: 'success',
+    title: 'Success',
+    text: '<?= session()->getFlashdata('successMsg'); ?>',
+    confirmButtonColor: '#6f42c1',
+    confirmButtonText: 'OK'
+});
+</script>
+<?php endif; ?>
+<?php if(session()->getFlashdata('errorMsg')): ?>
+<script>
+Swal.fire({
+    icon: 'error',
+    title: 'Error',
+    text: '<?= session()->getFlashdata('errorMsg'); ?>',
+    confirmButtonColor: '#dc3545',
+    confirmButtonText: 'OK'
+});
+</script>
+<?php endif; ?>
+
 </body>
 
 </html>
@@ -675,96 +699,107 @@
 
     
     function openPreview() {
-    const original = document.querySelector('.card.card-glass');
-    const clone = original.cloneNode(true);
+        const original = document.querySelector('.card.card-glass');
+        const clone = original.cloneNode(true);
 
-    const originalFields = original.querySelectorAll('input, select, textarea');
-    const cloneFields = clone.querySelectorAll('input, select, textarea');
+        const originalFields = original.querySelectorAll('input, select, textarea');
+        const cloneFields = clone.querySelectorAll('input, select, textarea');
 
-    originalFields.forEach(function (field, index) {
-        const cloneField = cloneFields[index];
+        originalFields.forEach(function (field, index) {
+            const cloneField = cloneFields[index];
 
-        if (!cloneField) return;
+            if (!cloneField) return;
 
-        if (field.type === 'file') {
-            cloneField.closest('.col-md-3')?.remove();
-            return;
-        }
+            if (field.type === 'file') {
+                cloneField.closest('.col-md-3')?.remove();
+                return;
+            }
 
-        if (field.tagName === 'SELECT') {
-            cloneField.value = field.value;
-        } else if (field.type === 'checkbox' || field.type === 'radio') {
-            cloneField.checked = field.checked;
-        } else {
-            cloneField.setAttribute('value', field.value);
-            cloneField.value = field.value;
-        }
+            if (field.tagName === 'SELECT') {
+                const selectedText = field.options[field.selectedIndex]?.text || '';
 
-        cloneField.setAttribute('readonly', true);
-        cloneField.setAttribute('disabled', true);
-    });
+                cloneField.innerHTML = '';
+                const opt = document.createElement('option');
+                opt.value = field.value;
+                opt.textContent = selectedText;
+                opt.selected = true;
 
-    clone.querySelectorAll('button').forEach(btn => btn.remove());
+                cloneField.appendChild(opt);
+                cloneField.value = field.value;
+            }
+            else if (field.type === 'checkbox' || field.type === 'radio') {
+                cloneField.checked = field.checked;
+            } 
+            else {
+                cloneField.setAttribute('value', field.value);
+                cloneField.value = field.value;
+            }
 
-    const previewWindow = window.open('', '_blank', 'width=1400,height=900,scrollbars=yes');
+            cloneField.setAttribute('readonly', true);
+            cloneField.setAttribute('disabled', true);
+        });
 
-    previewWindow.document.open();
-    previewWindow.document.write(`
-        <html>
-        <head>
-            <title>Employee Details Preview</title>
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-            <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-            <style>
-                body {
-                    background: linear-gradient(120deg,#f8f5ff,#eefaff);
-                    padding: 30px;
-                    font-family: Arial, sans-serif;
-                }
-                .card-glass {
-                    background: #fff;
-                    border-radius: 24px;
-                    padding: 20px;
-                    box-shadow: 0 10px 35px rgba(0,0,0,0.08);
-                }
-                .section-title {
-                    background: linear-gradient(90deg,#eee7ff,#eaf8ff);
-                    border: 1px solid #cfc4ff;
-                    border-radius: 12px;
-                    padding: 10px 14px;
-                    font-weight: 700;
-                    color: #3f1ca2;
-                    margin-bottom: 15px;
-                }
-                .address-band {
-                    border: 1px solid #d8ccff;
-                    border-radius: 14px;
-                    padding: 10px 16px;
-                    font-weight: 700;
-                    background: #faf8ff;
-                }
-                input, select, textarea {
-                    background-color: #f8f9fa !important;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="mb-3">
-                <button onclick="window.close()" class="btn btn-secondary rounded-pill">
-                    <i class="bi bi-arrow-left"></i> Back
-                </button>
-                <button onclick="window.print()" class="btn btn-primary rounded-pill">
-                    <i class="bi bi-printer"></i> Print
-                </button>
-            </div>
+        clone.querySelectorAll('button').forEach(btn => btn.remove());
 
-            ${clone.outerHTML}
-        </body>
-        </html>
-    `);
+        const previewWindow = window.open('', '_blank', 'width=1400,height=900,scrollbars=yes');
 
-    previewWindow.document.close();
-};
+        previewWindow.document.open();
+        previewWindow.document.write(`
+            <html>
+            <head>
+                <title>Employee Details Preview</title>
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+                <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+                <style>
+                    body {
+                        background: linear-gradient(120deg,#f8f5ff,#eefaff);
+                        padding: 30px;
+                        font-family: Arial, sans-serif;
+                    }
+                    .card-glass {
+                        background: #fff;
+                        border-radius: 24px;
+                        padding: 20px;
+                        box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+                    }
+                    .section-title {
+                        background: linear-gradient(90deg,#eee7ff,#eaf8ff);
+                        border: 1px solid #cfc4ff;
+                        border-radius: 12px;
+                        padding: 10px 14px;
+                        font-weight: 700;
+                        color: #3f1ca2;
+                        margin-bottom: 15px;
+                    }
+                    .address-band {
+                        border: 1px solid #d8ccff;
+                        border-radius: 14px;
+                        padding: 10px 16px;
+                        font-weight: 700;
+                        background: #faf8ff;
+                    }
+                    input, select, textarea {
+                        background-color: #f8f9fa !important;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="mb-3">
+                    <button onclick="window.close()" class="btn btn-secondary rounded-pill">
+                        <i class="bi bi-arrow-left"></i> Back
+                    </button>
+                    <button onclick="window.print()" class="btn btn-primary rounded-pill">
+                        <i class="bi bi-printer"></i> Print
+                    </button>
+                </div>
+
+                ${clone.outerHTML}
+            </body>
+            </html>
+        `);
+
+        previewWindow.document.close();
+    };
 
 
     document.addEventListener("DOMContentLoaded", function () {
