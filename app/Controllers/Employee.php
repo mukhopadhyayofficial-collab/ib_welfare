@@ -236,6 +236,57 @@ class Employee extends BaseController {
 
         return redirect()->to(base_url('add-employee'));
     }
+    public function getEmployeeList()
+    {        
+        if ($r = $this->requireLogin()) return $r;
+		$userModel = new UserModel();
+        $uid        = $this->uid();
+    	$userDetails  = $this->userDetails($uid);
+
+        $employeeList = $userModel
+        ->select('
+            users.id,
+            users.employee_id,
+            users.full_name,
+            users.mobile_number,
+            users.age,
+            users.blood_group,
+            users.height,
+            users.weight,
+            users.service_status,
+            master_designation_rank.rank_name,
+            master_unit.unit_name
+        ')
+        ->join(
+            'master_designation_rank',
+            'master_designation_rank.id = users.designation_rank_id',
+            'left'
+        )
+        ->join(
+            'master_unit',
+            'master_unit.id = users.department_unit_id',
+            'left'
+        )       
+        ->where('users.id !=', $uid)
+        ->where('users.status', 'Active')
+        ->orderBy('users.id', 'DESC')
+        ->findAll();
+
+        $data = [
+            'title'         => 'Employee Management',
+            'active_menu'   => 'employee-management',
+            'allUsers'      => db_connect()->table('users')
+                                    ->where('id !=', $uid)
+                                    ->where('status', 'Active')
+                                    ->get()
+                                    ->getResultArray(),
+            'userDetails'   => $userDetails,
+            'employeeList'  => $employeeList
+        ];
+
+        //return view('Employee/employeeManagement', $data);
+        return view('_header', $data) . view('Employee/employeeManagement', $data);
+    }
     public function deleteEmployee($id = null){
         $session = session();
 		$UserModel = new UserModel();
